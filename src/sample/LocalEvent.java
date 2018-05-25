@@ -30,7 +30,7 @@ public class LocalEvent {
 
     @Override
     public String toString(){
-        return "At : " + this.getDate() + " " + this.getDescription();
+        return "On : " + this.getDate() + " " + this.getDescription();
     }
 
 }
