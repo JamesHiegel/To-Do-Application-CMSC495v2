@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package yeti;
+package com.sad.yeti;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +19,7 @@ public class YETI extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("YETI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/YETI.fxml"));
         
         Scene scene = new Scene(root);
         
