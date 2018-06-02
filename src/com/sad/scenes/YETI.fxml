@@ -5,7 +5,6 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.YETIController">
    <children>
       <SplitPane dividerPositions="0.5" prefHeight="575.0" prefWidth="800.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="59.0">
@@ -60,7 +59,7 @@
             <Image url="file:/Users/JT/Downloads/if_user_42390.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutY="523.0" prefHeight="25.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane prefHeight="25.0" prefWidth="800.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <HBox alignment="CENTER" layoutX="19.0" layoutY="4.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0">
                <children>
