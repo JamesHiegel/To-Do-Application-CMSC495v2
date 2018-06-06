@@ -32,7 +32,7 @@ public class Controller implements Initializable {
     @FXML
     ListView<LocalEvent> eventList;
 
-    ObservableList<LocalEvent> list = FXCollections.observableArrayList();
+    private ObservableList<LocalEvent> list = FXCollections.observableArrayList();
 
     @FXML
     private void addEvent(Event event) {
