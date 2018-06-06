@@ -73,7 +73,7 @@ public class Security {
 
     public static String encrypt(String message) {
         try {
-            setKey();
+            setKey(KEY);
             Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
             cipher.init( Cipher.ENCRYPT_MODE, secretKey );
             return Base64.getEncoder().encodeToString(cipher.doFinal(message.getBytes("UTF-8")));
