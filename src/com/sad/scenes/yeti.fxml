@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.YETIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.YetiController">
    <children>
       <SplitPane dividerPositions="0.5" prefHeight="575.0" prefWidth="800.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="59.0">
          <items>
@@ -47,8 +47,8 @@
          <children>
             <HBox layoutX="19.0" layoutY="10.0" spacing="5.0" AnchorPane.leftAnchor="19.0">
                <children>
-                  <Button fx:id="btnAddItem" mnemonicParsing="false" onAction="#addItem" prefHeight="20.0" prefWidth="130.0" text="Add Item" />
-                  <Button fx:id="btnDeleteItem" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="130.0" text="Delete Item" />
+                  <Button fx:id="btnAddItem" mnemonicParsing="false" onAction="#addItem" prefHeight="20.0" prefWidth="130.0" text="Add Item" style="-fx-background-color: navy;" textFill="white"/>
+                  <Button fx:id="btnDeleteItem" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="130.0" text="Delete Item" style="-fx-background-color: navy;" textFill="white"/>
                </children>
             </HBox>
          </children>
@@ -56,14 +56,14 @@
       <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutY="23.0" text="06/01/2018 19:16" textAlignment="CENTER" AnchorPane.rightAnchor="70.0" />
       <ImageView fx:id="settings" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" y="7.0" AnchorPane.rightAnchor="19.0">
          <image>
-            <Image url="file:/Users/JT/Downloads/if_user_42390.png" />
+            <Image url="@/com/sad/resources/settings.png" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="25.0" prefWidth="800.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <HBox alignment="CENTER" layoutX="19.0" layoutY="4.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0">
                <children>
-                  <Label fx:id="lblCopyright" text="Copyright ® 2018 SAD Software, Inc." />
+                  <Label fx:id="lblCopyright" text="Copyright ® 2018 SAD Software, Inc." textFill="navy"/>
                </children>
             </HBox>
          </children>

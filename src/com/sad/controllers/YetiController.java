@@ -32,7 +32,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  *
  * @author JT
  */
-public class YETIController implements Initializable {
+public class YetiController implements Initializable {
 
     @FXML private Label lblPersonalList;
     @FXML private Label lblProfessionalList;
