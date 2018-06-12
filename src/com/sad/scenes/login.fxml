@@ -19,7 +19,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="217.0" layoutY="302.0" text="Don't have an Account?" />
-      <Button layoutX="262.0" layoutY="335.0" mnemonicParsing="false" text="Sign Up" />
+      <Label fx:id="noacc_label_login" layoutX="217.0" layoutY="302.0" text="Don't have an Account?" />
+      <Button fx:id="snup_button_login" layoutX="262.0" layoutY="335.0" mnemonicParsing="false" text="Sign Up" />
    </children>
 </AnchorPane>
