@@ -81,7 +81,9 @@ public class YetiController implements Initializable {
     }
 
     @FXML
-    private void addItem(ActionEvent event) {
+    private void addItem(ActionEvent event ) {
+
+
     }
 
     @FXML
