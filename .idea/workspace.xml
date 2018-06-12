@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="##UPDATED TEMP&#10;&#10;Replaced CreateUser.java and FXML file with Signup and FXML file.&#10;&#10;&#10;&#10;Can be reverted easily.">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sad/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sad/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,14 +89,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+            <state relative-caret-position="1328">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1050">
+                <caret line="50" column="3" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -148,15 +160,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="YetiPreloader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sad/yeti/YetiPreloader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="806">
-              <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -220,6 +223,7 @@
         <option value="$PROJECT_DIR$/src/com/sad/controllers/Signup.java" />
         <option value="$PROJECT_DIR$/src/com/sad/controllers/SignupController.java" />
         <option value="$PROJECT_DIR$/src/com/sad/controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -473,7 +477,7 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1527204696351" duration="406000" />
       <workItem from="1528668468661" duration="291000" />
-      <workItem from="1528669105225" duration="17333000" />
+      <workItem from="1528669105225" duration="20066000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branches 'WIP' and 'master' of https://github.com/KingofPirates93/To-Do-Application-CMSC495 into WIP&#10;&#10;# Conflicts:&#10;#&#9;src/sample/Main.java">
       <created>1527206076717</created>
@@ -531,18 +535,32 @@
       <option name="project" value="LOCAL" />
       <updated>1528817972572</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="##UPDATED TEMP&#10;&#10;put a template how to create an action handler in logincontroller. &#10;&#10;&#10;let me know if we want to do this differently.">
+      <created>1528820073933</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1528820073933</updated>
+    </task>
+    <task id="LOCAL-00010" summary="##UPDATED TEMP&#10;&#10;put a template how to create an action handler in logincontroller. &#10;&#10;&#10;let me know if we want to do this differently.">
+      <created>1528821260785</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1528821260785</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19676000" />
+    <option name="totallyTimeSpent" value="22409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5023981" side_tool="true" visible="true" weight="0.1708502" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5023981" side_tool="true" visible="true" weight="0.19271255" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Flutter Outline" order="4" />
@@ -558,7 +576,7 @@
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49760193" visible="true" weight="0.1708502" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49760193" visible="true" weight="0.19271255" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840128" weight="0.14736842" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960032" weight="0.32955465" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.25579536" />
@@ -632,7 +650,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Merge branches 'WIP' and 'master' of https://github.com/KingofPirates93/To-Do-Application-CMSC495 into WIP&#10;&#10;# Conflicts:&#10;#&#9;src/sample/Main.java" />
     <MESSAGE value="Added Email Controller and KeygenController, &#10;&#10;&#10;Will be including more functionality with FXML in next commit." />
@@ -641,7 +658,8 @@
     <MESSAGE value="##Update TEMP&#10;&#10;Added a sign-up button." />
     <MESSAGE value="##UPDATED TEMP&#10;&#10;Added login fxml and controller." />
     <MESSAGE value="##UPDATED TEMP&#10;&#10;Replaced CreateUser.java and FXML file with Signup and FXML file.&#10;&#10;&#10;&#10;Can be reverted easily." />
-    <option name="LAST_COMMIT_MESSAGE" value="##UPDATED TEMP&#10;&#10;Replaced CreateUser.java and FXML file with Signup and FXML file.&#10;&#10;&#10;&#10;Can be reverted easily." />
+    <MESSAGE value="##UPDATED TEMP&#10;&#10;put a template how to create an action handler in logincontroller. &#10;&#10;&#10;let me know if we want to do this differently." />
+    <option name="LAST_COMMIT_MESSAGE" value="##UPDATED TEMP&#10;&#10;put a template how to create an action handler in logincontroller. &#10;&#10;&#10;let me know if we want to do this differently." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -808,11 +826,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        <state relative-caret-position="1328">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1050">
+            <caret line="50" column="3" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
