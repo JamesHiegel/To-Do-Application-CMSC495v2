@@ -2,9 +2,11 @@
   <library name="lib">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/src/lib" />
+      <root url="file://$USER_HOME$/Desktop/db-derby-10.14.1.0-bin/db-derby-10.14.1.0-bin/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Desktop/db-derby-10.14.1.0-bin/db-derby-10.14.1.0-bin/lib" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/src/lib" recursive="false" />
   </library>
 </component>
