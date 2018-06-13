@@ -1,15 +1,12 @@
 package com.sad.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-
-import javafx.event.*;
 import javafx.scene.control.TextField;
-
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -67,21 +64,15 @@ public class LoginController  implements Initializable {
 
         try {
             /**
-            String buffer_getunamefromdb = dbclass.getunamefromdb (class methods getters)
+             String buffer_getunamefromdb = dbclass.getunamefromdb (class methods getters)
              String buffer_getpnamefromdb = dbclass.getpnamefromdb (class methods getters)
-            if(login_getUsername.equals(buffer_getnamefromdb) && login_pfield_retrieve.equals(buffer_getpnamefromdb)  ){
-
+             if(login_getUsername.equals(buffer_getnamefromdb) && login_pfield_retrieve.equals(buffer_getpnamefromdb)  ){
              //Authenticate here and redirect to next scene
-
-            }else{
-
+             }else{
              //else show wrong password prompt
-
              //else redirect to unsuccessfull login screen after 3 attempts
-
-
              }
-            */
+             */
 
         } catch (Exception e) {
 
