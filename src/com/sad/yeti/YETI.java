@@ -24,7 +24,7 @@ public class YETI extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/yeti.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/login.fxml"));
 
         Scene mainScene = new Scene(root);
 
