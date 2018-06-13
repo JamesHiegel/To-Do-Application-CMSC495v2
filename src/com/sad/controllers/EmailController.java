@@ -67,5 +67,9 @@ public class EmailController {
 
     }
 
+    public static void emailNotificationSend() throws AddressException, MessagingException {
+
+    }
+
 
 }
