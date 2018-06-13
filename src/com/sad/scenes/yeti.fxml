@@ -47,8 +47,8 @@
          <children>
             <HBox layoutX="19.0" layoutY="10.0" spacing="5.0" AnchorPane.leftAnchor="19.0">
                <children>
-                  <Button fx:id="btnAddItem" mnemonicParsing="false" onAction="#addItem" prefHeight="20.0" prefWidth="130.0" text="Add Item" style="-fx-background-color: navy;" textFill="white"/>
-                  <Button fx:id="btnDeleteItem" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="130.0" text="Delete Item" style="-fx-background-color: navy;" textFill="white"/>
+                  <Button fx:id="btnAddItem" mnemonicParsing="false" onAction="#addItem" prefHeight="20.0" prefWidth="130.0" text="Add Item" style="-fx-background-color: navy;" textFill="white" onMouseClicked="#addItem"/>
+                  <Button fx:id="btnDeleteItem" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="130.0" text="Delete Item" style="-fx-background-color: navy;" textFill="white" onMouseClicked="#deleteItem"/>
                </children>
             </HBox>
          </children>
