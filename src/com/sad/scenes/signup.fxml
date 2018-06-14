@@ -27,6 +27,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="snup_button_snup" layoutX="262.0" layoutY="279.0" mnemonicParsing="false" text="Sign Up!" />
+      <Button fx:id="snup_button_snup" layoutX="262.0" layoutY="279.0" mnemonicParsing="false" text="Sign Up!" onAction="#signUp_handleButtonAction"/>
    </children>
 </AnchorPane>

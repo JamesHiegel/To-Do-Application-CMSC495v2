@@ -5,6 +5,7 @@
  */
 package com.sad.yeti;
 
+import com.sad.controllers.YetiController;
 import com.sad.database.DBUtils;
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
@@ -24,9 +25,7 @@ public class YETI extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        //Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/yeti.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/login.fxml"));
-
 
         Scene mainScene = new Scene(root);
 
@@ -36,7 +35,6 @@ public class YETI extends Application {
         //stage.setMinWidth(790);
         //stage.setMinHeight(360);
         stage.show();
-
     }
 
     @Override

@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="555.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.LoginController">
-    <children>
-        <Button fx:id="login_button_login" layoutX="362.0" layoutY="218.0" mnemonicParsing="false" text="Login" />
-        <PasswordField fx:id="pfield_login" layoutX="297.0" layoutY="166.0" />
-        <TextField fx:id="uname_login" layoutX="297.0" layoutY="122.0" />
-        <Label fx:id="uname_label_login" layoutX="217.0" layoutY="127.0" text="Username" />
-        <Label fx:id="pwrd_label_login" layoutX="219.0" layoutY="171.0" text="Password" />
-        <Label fx:id="banner_login_login" layoutX="300.0" layoutY="49.0" prefHeight="43.0" prefWidth="200.0" text="Please Login Below" textAlignment="LEFT">
-            <font>
-                <Font size="22.0" />
-            </font>
-        </Label>
-        <Label fx:id="noacc_label_login" layoutX="321.0" layoutY="292.0" text="Don't have an Account?" />
-        <Button fx:id="snup_button_login" layoutX="354.0" layoutY="335.0" mnemonicParsing="false" text="Sign Up" />
-    </children>
+<AnchorPane prefHeight="423.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.LoginController">
+   <children>
+      <Button fx:id="login_button_login" layoutX="268.0" layoutY="212.0" mnemonicParsing="false" text="Login" onAction="#login_handleButtonAction"/>
+      <PasswordField fx:id="pfield_login" layoutX="203.0" layoutY="169.0" />
+      <TextField fx:id="uname_login" layoutX="203.0" layoutY="122.0" />
+      <Label fx:id="uname_label_login" layoutX="124.0" layoutY="127.0" text="Username" />
+      <Label fx:id="pwrd_label_login" layoutX="123.0" layoutY="171.0" text="Password" />
+      <Label fx:id="banner_login_login" layoutX="203.0" layoutY="56.0" prefHeight="43.0" prefWidth="187.0" text="Please Login Below" textAlignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="noacc_label_login" layoutX="217.0" layoutY="302.0" text="Don't have an Account?" />
+      <Button fx:id="snup_button_login" layoutX="262.0" layoutY="335.0" mnemonicParsing="false" text="Sign Up" onAction="#signUp_handleButtonAction"/>
+   </children>
 </AnchorPane>

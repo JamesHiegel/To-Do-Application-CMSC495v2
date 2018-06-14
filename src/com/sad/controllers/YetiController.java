@@ -5,6 +5,7 @@
  */
 package com.sad.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -16,11 +17,17 @@ import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import com.sad.yeti.LocalEvent;
 import java.time.Month;
@@ -81,21 +88,25 @@ public class YetiController implements Initializable {
     }
 
     @FXML
-    private void addItem(ActionEvent event ) {
+    private void addItem(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/createTask.fxml"));
 
-
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
     @FXML
     private void deleteItem(ActionEvent event) {
+
     }
 
     private ObservableList<LocalEvent> getPersonalEvents() {
         ObservableList<LocalEvent> localEvents = FXCollections.observableArrayList();
-        localEvents.add(new LocalEvent(1, LocalDate.of(2018, Month.JUNE, 1),"ToDo 1"));
-        localEvents.add(new LocalEvent(3, LocalDate.of(2018, Month.JUNE, 1),"ToDo 2"));
-        localEvents.add(new LocalEvent(2, LocalDate.of(2018, Month.JUNE, 1),"ToDo 3"));
-        localEvents.add(new LocalEvent(3, LocalDate.of(2018, Month.JUNE, 1),"ToDo 4"));
+        localEvents.add(new LocalEvent(1, LocalDate.of(2018, Month.JUNE, 1),"ToDo 1", true));
+        localEvents.add(new LocalEvent(3, LocalDate.of(2018, Month.JUNE, 1),"ToDo 2", true));
+        localEvents.add(new LocalEvent(2, LocalDate.of(2018, Month.JUNE, 1),"ToDo 3", true));
+        localEvents.add(new LocalEvent(3, LocalDate.of(2018, Month.JUNE, 1),"ToDo 4", true));
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         
         return localEvents;
@@ -103,10 +114,10 @@ public class YetiController implements Initializable {
     
     private ObservableList<LocalEvent> getProfessionalEvents() {
         ObservableList<LocalEvent> localEvents = FXCollections.observableArrayList();
-        localEvents.add(new LocalEvent(1, LocalDate.of(2018, Month.JUNE, 2),"Professional ToDo 1"));
-        localEvents.add(new LocalEvent(3, LocalDate.of(2018, Month.JUNE, 3),"Professional ToDo 2"));
-        localEvents.add(new LocalEvent(2, LocalDate.of(2018, Month.JUNE, 4),"Professional ToDo 3"));
-        localEvents.add(new LocalEvent(1, LocalDate.of(2018, Month.JUNE, 5),"Professional ToDo 4"));
+        localEvents.add(new LocalEvent(1, LocalDate.of(2018, Month.JUNE, 2),"Professional ToDo 1", false));
+        localEvents.add(new LocalEvent(3, LocalDate.of(2018, Month.JUNE, 3),"Professional ToDo 2", false));
+        localEvents.add(new LocalEvent(2, LocalDate.of(2018, Month.JUNE, 4),"Professional ToDo 3", false));
+        localEvents.add(new LocalEvent(1, LocalDate.of(2018, Month.JUNE, 5),"Professional ToDo 4", false));
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         
         return localEvents;

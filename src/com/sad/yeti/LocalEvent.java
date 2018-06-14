@@ -12,11 +12,13 @@ public class LocalEvent {
     private int priority;
     private LocalDate date;
     private SimpleStringProperty description;
+    private boolean personal;
 
-    public LocalEvent( int priority, LocalDate date, String description) {
+    public LocalEvent(int priority, LocalDate date, String description, boolean personal) {
         this.priority = priority;
         this.date = date;
         this.description = new SimpleStringProperty(description);
+        this.personal = personal;
     }
 
     public int getPriority() {
@@ -37,6 +39,14 @@ public class LocalEvent {
 
     public String getDescription() {
         return description.get();
+    }
+
+    public void setPersonal(boolean personal) {
+        this.personal = personal;
+    }
+
+    public boolean getPersonal() {
+        return personal;
     }
 
     public void setDescription(String description) {
