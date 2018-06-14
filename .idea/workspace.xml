@@ -2,6 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/sad/resources/password.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/javax.mail-1.4.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sad/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sad/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sad/database/CreateDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sad/database/DBUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sad/resources/settings.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sad/resources/settings.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sad/resources/yeti.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sad/resources/yeti.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sad/scenes/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sad/scenes/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sad/yeti/YETI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sad/yeti/YETI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/sad/scenes/MFA.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sad/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sad/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sad/controllers/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sad/controllers/SignupController.java" afterDir="false" />
@@ -18,6 +28,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/To_Do_Application_CMSC495$Security.ic" NAME="Security Coverage Results" MODIFIED="1528239799227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.sad.utils.*</FILTER>
+    </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -86,6 +101,17 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="YETI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sad/yeti/YETI.java">
+      <file leaf-file-name="YetiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/YetiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyGenController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/KeyGenController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
@@ -98,6 +124,38 @@
       </file>
       <file leaf-file-name="login.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/login.fxml">
+      <file leaf-file-name="YETI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/yeti/YETI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/resources/database.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="DBUtils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/database/DBUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+              <folding>
+                <element signature="e#5300#5301#0" expanded="true" />
+                <element signature="e#5330#5331#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sql/build.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="355">
               <caret line="22" column="147" selection-start-line="22" selection-start-column="147" selection-end-line="22" selection-end-column="147" />
@@ -108,6 +166,17 @@
       </file>
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/LoginController.java">
+      <file leaf-file-name="Security.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/utils/Security.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateTaskController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/CreateTaskController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="73">
               <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="113" />
@@ -117,6 +186,17 @@
       </file>
       <file leaf-file-name="SignupController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/SignupController.java">
+      <file leaf-file-name="YetiPreloader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/yeti/YetiPreloader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-139">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmailController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/EmailController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
@@ -132,6 +212,47 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="226">
               <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+      <file leaf-file-name="login.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/login.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1545">
+              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="EmailController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/EmailController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+      <file leaf-file-name="splash.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/splash.fxml">
+          <provider editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="login.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/login.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -141,6 +262,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-981">
               <caret line="51" column="74" lean-forward="true" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
+      <file leaf-file-name="SplashController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/SplashController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+      <file leaf-file-name="MFA.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/MFA.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -189,6 +320,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -196,9 +328,14 @@
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/KeyGenController.java" />
         <option value="$PROJECT_DIR$/src/com/sad/controllers/KeyGenController.java" />
+        <option value="$PROJECT_DIR$/src/com/sad/scenes/signup.fxml" />
         <option value="$PROJECT_DIR$/src/com/sad/scenes/Signup.java" />
         <option value="$PROJECT_DIR$/src/com/sad/controllers/Signup.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/sad/controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/com/sad/scenes/login.fxml" />
+        <option value="$PROJECT_DIR$/src/com/sad/yeti/YETI.java" />
+        <option value="$PROJECT_DIR$/src/com/sad/database/DBUtils.java" />
         <option value="$PROJECT_DIR$/src/com/sad/controllers/EmailController.java" />
         <option value="$PROJECT_DIR$/src/com/sad/scenes/MFA.fxml" />
         <option value="$PROJECT_DIR$/src/com/sad/scenes/yeti.fxml" />
@@ -233,6 +370,9 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -243,6 +383,8 @@
     <panes>
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,12 +396,29 @@
               <item name="toDo" type="b2602c69:ProjectViewProjectNode" />
               <item name="toDo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="To-Do-Application-CMSC495" type="b2602c69:ProjectViewProjectNode" />
+              <item name="To-Do-Application-CMSC495" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="To-Do-Application-CMSC495" type="b2602c69:ProjectViewProjectNode" />
+              <item name="To-Do-Application-CMSC495" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sad" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="To-Do-Application-CMSC495" type="b2602c69:ProjectViewProjectNode" />
+              <item name="To-Do-Application-CMSC495" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sad" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="toDo" type="b2602c69:ProjectViewProjectNode" />
               <item name="toDo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sad" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="toDo" type="b2602c69:ProjectViewProjectNode" />
@@ -267,6 +426,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sad" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="toDo" type="b2602c69:ProjectViewProjectNode" />
@@ -278,15 +438,31 @@
             <path>
               <item name="toDo" type="b2602c69:ProjectViewProjectNode" />
               <item name="toDo" type="462c0819:PsiDirectoryNode" />
+              <item name="To-Do-Application-CMSC495" type="b2602c69:ProjectViewProjectNode" />
+              <item name="To-Do-Application-CMSC495" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sad" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="To-Do-Application-CMSC495" type="b2602c69:ProjectViewProjectNode" />
+              <item name="To-Do-Application-CMSC495" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sad" type="462c0819:PsiDirectoryNode" />
               <item name="yeti" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="To-Do-Application-CMSC495" type="b2602c69:ProjectViewProjectNode" />
+              <item name="To-Do-Application-CMSC495" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,6 +486,12 @@
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/sad/resources" />
+      <recent name="$PROJECT_DIR$/src/lib" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -432,82 +614,84 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1527204696351" duration="406000" />
+      <workItem from="1527235274469" duration="668000" />
+      <workItem from="1528202612295" duration="10386000" />
+      <workItem from="1528503416776" duration="9442000" />
+      <workItem from="1528524605453" duration="2069000" />
+      <workItem from="1528665285162" duration="10779000" />
+      <workItem from="1528842785144" duration="1588000" />
+      <workItem from="1528845006914" duration="9150000" />
       <workItem from="1528668468661" duration="291000" />
       <workItem from="1528669105225" duration="26598000" />
       <workItem from="1528906180479" duration="241000" />
       <workItem from="1528907467616" duration="269000" />
       <workItem from="1528907788620" duration="7712000" />
     </task>
-    <task id="LOCAL-00001" summary="Merge branches 'WIP' and 'master' of https://github.com/KingofPirates93/To-Do-Application-CMSC495 into WIP&#10;&#10;# Conflicts:&#10;#&#9;src/sample/Main.java">
-      <created>1527206076717</created>
+    <task id="LOCAL-00001" summary="Prototype.">
+      <created>1527235331661</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1527206076717</updated>
+      <updated>1527235331661</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added Email Controller and KeygenController, &#10;&#10;&#10;Will be including more functionality with FXML in next commit.">
-      <created>1528801359291</created>
+    <task id="LOCAL-00002" summary="Prototype.">
+      <created>1528247356757</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1528801359291</updated>
+      <updated>1528247356758</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added basic GUI to login.fxml">
-      <created>1528803927675</created>
+    <task id="LOCAL-00003" summary="Prototype.">
+      <created>1528247453989</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1528803927675</updated>
+      <updated>1528247453989</updated>
     </task>
-    <task id="LOCAL-00004" summary="##TEMPORARY &#10;&#10;Added login FXML elements, will update with final code after meeting">
-      <created>1528811023525</created>
+    <task id="LOCAL-00004" summary="Prototype.">
+      <created>1528247687220</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1528811023525</updated>
+      <updated>1528247687220</updated>
     </task>
-    <task id="LOCAL-00005" summary="##Update TEMP&#10;&#10;Added a sign-up button.">
-      <created>1528814779818</created>
+    <task id="LOCAL-00005" summary="Added Create DB">
+      <created>1528263348453</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1528814779818</updated>
+      <updated>1528263348455</updated>
     </task>
-    <task id="LOCAL-00006" summary="##Update TEMP&#10;&#10;Added a sign-up button.">
-      <created>1528815101173</created>
+    <task id="LOCAL-00006" summary="Cleanup">
+      <created>1528264162002</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1528815101173</updated>
+      <updated>1528264162002</updated>
     </task>
-    <task id="LOCAL-00007" summary="##UPDATED TEMP&#10;&#10;Added login fxml and controller.">
-      <created>1528816999822</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1528816999822</updated>
-    </task>
-    <task id="LOCAL-00008" summary="##UPDATED TEMP&#10;&#10;Replaced CreateUser.java and FXML file with Signup and FXML file.&#10;&#10;&#10;&#10;Can be reverted easily.">
-      <created>1528817972572</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1528817972572</updated>
-    </task>
-    <task id="LOCAL-00009" summary="##UPDATED TEMP&#10;&#10;put a template how to create an action handler in logincontroller. &#10;&#10;&#10;let me know if we want to do this differently.">
-      <created>1528820073933</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1528820073933</updated>
-    </task>
-    <task id="LOCAL-00010" summary="##UPDATED TEMP&#10;&#10;put a template how to create an action handler in logincontroller. &#10;&#10;&#10;let me know if we want to do this differently.">
-      <created>1528821260785</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1528821260785</updated>
-    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="34883000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1440" height="830" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="17" weight="0.32671958" />
+      <window_info anchor="right" id="Palette&#9;" order="12" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50277776" side_tool="true" weight="0.42592594" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.42479676" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49722221" weight="0.42592594" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info id="Capture Tool" order="5" />
     <task id="LOCAL-00011" summary="##Final edit before lunc&#10;&#10;added readme.md template, someones needs to fill, &#10;&#10;also editing a few things not too important.">
       <created>1528822695086</created>
       <option name="number" value="00011" />
@@ -562,8 +746,17 @@
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.17408274" />
       <window_info anchor="right" id="Database" order="3" weight="0.35226303" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.12916666" />
+      <window_info anchor="right" id="Database" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection Results" order="16" weight="0.32939634" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Changes" order="8" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -620,6 +813,58 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49920064" weight="0.32955465" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49960032" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="6" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Problems" order="10" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info anchor="right" id="Flutter Outline" order="9" />
+      <window_info anchor="right" id="Flutter Inspector" order="10" />
+      <window_info anchor="bottom" id="Application Servers" order="12" />
+      <window_info anchor="bottom" id="SonarLint" order="14" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Application Servers" order="12" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="JetGradle" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49722221" visible="true" weight="0.42592594" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Changes" order="8" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="bottom" id="Inspection Results" order="16" weight="0.32939634" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50277776" side_tool="true" weight="0.42592594" />
+      <window_info anchor="bottom" id="Messages" order="17" weight="0.32671958" />
+      <window_info anchor="bottom" id="SonarLint" order="14" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Flutter Outline" order="9" />
+      <window_info anchor="bottom" id="Problems" order="10" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.42479676" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.12916666" />
+      <window_info anchor="right" id="Flutter Inspector" order="10" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="12" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -675,7 +920,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Prototype." />
+    <MESSAGE value="Added Create DB" />
+    <MESSAGE value="Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
     <MESSAGE value="Merge branches 'WIP' and 'master' of https://github.com/KingofPirates93/To-Do-Application-CMSC495 into WIP&#10;&#10;# Conflicts:&#10;#&#9;src/sample/Main.java" />
     <MESSAGE value="Added Email Controller and KeygenController, &#10;&#10;&#10;Will be including more functionality with FXML in next commit." />
     <MESSAGE value="Added basic GUI to login.fxml" />
@@ -726,12 +977,128 @@
     <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/CreateUserController.java" />
     <entry file="file://$PROJECT_DIR$/src/com/sad/resources/settings.png">
       <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/splash.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="48" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sad/resources/yeti.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/yeti/YetiPreloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/login.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/SplashController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/createUser.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/createTask.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/yeti.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="87" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="87" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/YetiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" lean-forward="true" selection-start-line="52" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/splash.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/yeti/YetiPreloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/login.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" lean-forward="true" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e20b86de-d86f-4244-9a2e-48fa9d7bc8a8/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/createUser.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/SplashController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e20b86de-d86f-4244-9a2e-48fa9d7bc8a8/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/createUser.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -757,6 +1124,102 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sad/database/CreateDB.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/createUser.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/createTask.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/yeti/YETI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/utils/Security.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="89" column="71" selection-start-line="89" selection-start-column="71" selection-end-line="89" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/YetiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/database/DBUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="14" lean-forward="true" selection-end-line="689" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/LocalEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/LocalEvent.java" />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="14" selection-end-line="822" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/CreateUserController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/CreateTaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/createUser.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/createTask.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/yeti.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="64" selection-end-column="25" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/splash.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/resources/database.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
@@ -809,8 +1272,14 @@
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/io/Console.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/SplashController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/utils/Security.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
@@ -818,6 +1287,25 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sad/utils/Security.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/YetiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/javafx-src.zip!/javafx/event/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+    <entry file="file://$PROJECT_DIR$/sql/build.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="1768" selection-start-line="1768" selection-end-line="1768" />
@@ -836,6 +1324,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="26">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="898">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#953#954#0" expanded="true" />
@@ -850,6 +1350,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/login.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/yeti/YetiPreloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/signup.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -862,6 +1378,14 @@
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/login.fxml">
+    <entry file="file://$PROJECT_DIR$/src/com/sad/resources/database.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/yeti/YETI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+    <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/KeyGenController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="22" column="147" selection-start-line="22" selection-start-column="147" selection-end-line="22" selection-end-column="147" />
@@ -885,6 +1409,19 @@
           <caret line="51" column="74" lean-forward="true" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
         </state>
       </provider>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/database/DBUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#5300#5301#0" expanded="true" />
+            <element signature="e#5330#5331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    <entry file="file://$PROJECT_DIR$/src/com/sad/scenes/splash.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sad/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">

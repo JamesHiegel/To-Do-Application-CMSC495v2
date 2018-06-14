@@ -6,6 +6,7 @@
 package com.sad.yeti;
 
 import com.sad.controllers.YetiController;
+import com.sad.database.DBUtils;
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
 import javafx.application.Preloader;
@@ -30,8 +31,9 @@ public class YETI extends Application {
 
         stage.setTitle("YETI");
         stage.setScene(mainScene);
-        stage.setMinWidth(790);
-        stage.setMinHeight(360);
+        stage.setResizable(false);
+        //stage.setMinWidth(790);
+        //stage.setMinHeight(360);
         stage.show();
     }
 
@@ -39,7 +41,26 @@ public class YETI extends Application {
     public void init() throws Exception {
 
         // Perform some heavy lifting (i.e. database start, check for application updates, etc. )
-        for (int i = 0; i < COUNT_LIMIT; i++) {
+        if (DBUtils.dbExists()) {
+            DBUtils db = new DBUtils();
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.5));
+            System.out.println("DB Exists - Display Tables");
+            db.displayTables();
+        } else {
+            DBUtils db = new DBUtils();
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.05));
+            db.createDB();
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.20));
+            db.createSequences();
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.35));
+            db.createTables();
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.50));
+            db.seedTables();
+            System.out.println("DB Does Not Exists - Display Tables");
+            db.displayTables();
+        }
+
+        for (int i = 6; i < COUNT_LIMIT; i++) {
             double progress = (double) i / COUNT_LIMIT;
             LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(progress));
             Thread.sleep(500);
