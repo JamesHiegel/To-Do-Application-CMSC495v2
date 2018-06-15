@@ -1,5 +1,6 @@
 package com.sad.controllers;
 
+import com.sad.utils.Security;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,22 +16,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class SignupController implements Initializable {
 
-    @FXML
-    Label signup_banner_snup;
-    @FXML
-    Label uname_label_snup;
-    @FXML
-    TextField uname_snup;
-    @FXML
-    Label pfield_label_snup;
-    @FXML
-    PasswordField pfield_snup;
-    @FXML
-    Button snup_button_snup;
+    @FXML Label signup_banner_snup;
+    @FXML Label uname_label_snup;
+    @FXML TextField uname_snup;
+    @FXML Label pfield_label_snup;
+    @FXML PasswordField pfield_snup;
+    @FXML Button snup_button_snup;
 
 
 
@@ -47,17 +46,37 @@ public class SignupController implements Initializable {
         //send account details to database
 
         //authenticate
+        boolean status=false;
 
-        // setting stage to normal YETI application
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/yeti.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
+            Connection conn = null;
+            conn = DriverManager.getConnection("jdbc:derby:YETI;create=true");
+
+            String sql = "insert into users values (next value for users_seq, ?, ?)";
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, uname_snup.getText());
+            pstmt.setString(2, Security.md5Hash(pfield_snup.getText()));
+
+            status = pstmt.execute();
+            status = true;
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
         }
 
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+        if (status) {
+
+            // setting stage to normal YETI application
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/yeti.fxml"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }
     }
 }
