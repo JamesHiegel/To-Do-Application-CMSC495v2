@@ -1,5 +1,6 @@
 package com.sad.controllers;
 
+import com.sad.utils.Security;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,30 +16,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class LoginController  implements Initializable {
 
 
-    @FXML
-    Label banner_login_login;
-    @FXML
-    Label uname_label_login;
-    @FXML
-    TextField uname_login;
-    @FXML
-    Label pwrd_label_login;
-    @FXML
-    PasswordField pfield_login;
-    @FXML
-    Button login_button_login;
-    @FXML
-    Label noacc_label_login;
-    @FXML
-    Button snup_button_login;
-
-
-
+    @FXML Label banner_login_login;
+    @FXML Label uname_label_login;
+    @FXML TextField uname_login;
+    @FXML Label pwrd_label_login;
+    @FXML PasswordField pfield_login;
+    @FXML Button login_button_login;
+    @FXML Label noacc_label_login;
+    @FXML Button snup_button_login;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -69,6 +60,9 @@ public class LoginController  implements Initializable {
 
 
         //this is where we check where the uname & passwords match or not
+        int user_id=0;
+        int hitcnt=0;
+        boolean status=false;
 
         try {
             /**
@@ -81,25 +75,60 @@ public class LoginController  implements Initializable {
              //else redirect to unsuccessfull login screen after 3 attempts
              }
              */
+            Connection conn = null;
+            conn = DriverManager.getConnection("jdbc:derby:YETI;create=true");
 
-        } catch (Exception e) {
+            String sql = "select us_id from users  where us_userName = ?";
 
-            //Exception can be changed accordingly
-            e.printStackTrace();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, login_getUserName);
+
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                user_id = rs.getInt(1);
+            }
+
+            if (user_id > 0) {
+                String sql2 = "select us_id from users where us_id = ? and us_password = ?";
+
+                stmt = conn.prepareStatement(sql2);
+                stmt.setInt(1, user_id);
+                stmt.setString(2, Security.md5Hash(login_pfield_retrieve));
+                stmt.executeQuery();
+
+                ResultSet rs2 = stmt.executeQuery();
+                while (rs2.next()) {
+                    hitcnt++;
+                }
+                // Set to true if userid/password match
+                if(hitcnt>0){
+                    status=true;
+                    System.out.println("Login succeeded!");
+                } else {
+                    noacc_label_login.setText("Login failed, please try again!");
+                    System.out.println("Login failed!");
+                }
+            } else {
+                noacc_label_login.setText("Login failed, please try again!");
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
         }
 
-        // setting stage back to normal YETI application
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/yeti.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
+        // If successful login, then display the YETI application screen
+        if (status) {
+            // setting stage back to normal YETI application
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/yeti.fxml"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
         }
-
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-
     }
 
     @FXML

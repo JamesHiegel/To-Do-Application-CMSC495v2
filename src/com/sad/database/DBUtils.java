@@ -1,7 +1,13 @@
 package com.sad.database;
 
+import com.sad.yeti.LocalEvent;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.File;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.Month;
 
 public class DBUtils {
     private static final String DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
@@ -143,6 +149,41 @@ public class DBUtils {
                 }
             }
         }
+    }
+
+    public static ObservableList<LocalEvent> getPersonalTasks(int userID, String taskType) {
+        Connection conn = null;
+        ObservableList<LocalEvent> leList = FXCollections.observableArrayList();
+        PreparedStatement pstmt;
+        ResultSet rs;
+        boolean personal = false;
+        try {
+            if (taskType.equals("Personal")) personal=true;
+
+            conn = DriverManager.getConnection(DB_URL);
+            pstmt = conn.prepareStatement("SELECT ts_id,  pr_id, ts_date, ts_descripton FROM Tasks JOIN Priority on ts_priority = pp_id JOIN Task_Type on ts_type = tt_id where ts_user_id = ? and tt_description = ?");
+            pstmt.setInt(1, userID);
+            pstmt.setString( 2, taskType);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int taskID = rs.getInt(1);
+                int priorityID = rs.getInt( 2);
+                LocalDate date = rs.getDate(3).toLocalDate();
+                String description = rs.getString(4);
+                leList.add(new LocalEvent(priorityID, date,"ToDo 1", true));
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+        return leList;
     }
     public String getDbError() {
         return dbError;
