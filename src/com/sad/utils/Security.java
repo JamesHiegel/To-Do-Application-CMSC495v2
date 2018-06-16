@@ -35,23 +35,6 @@ public class Security {
         }
     }
 
-    public static void main(String[] args) {
-        String password1 = "mypassword";
-        String password2 = "adminpasstest";
-        String password3 = "customerpasstest";
-        String cc1 = "1111111111111111";
-        String cc2 = "2222222222222222";
-        String cc3 = "3333333333333333";
-        //String dbpass = "sdev425";
-        String dbpass = "sdevadmin";
-        System.out.println(password1+" : " + md5Hash(password1));
-        System.out.println(password2+" : " + md5Hash(password2));
-        System.out.println(password3+" : " + md5Hash(password3));
-        System.out.println(cc1+" : " + encrypt(cc1));
-        System.out.println(cc2+" : " + encrypt(cc2));
-        System.out.println(cc3+" : " + encrypt(cc3));
-        System.out.println(dbpass+" : "+ encrypt(dbpass));
-    }
 
     //Takes a string, and converts it to md5 hashed string.
     public static String md5Hash(String message) {
