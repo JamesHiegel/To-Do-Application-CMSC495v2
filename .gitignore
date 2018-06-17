@@ -4,6 +4,9 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/**/dataSources.local.xml
+.idea/**/dataSources.xml
+.idea/**/dataSources/
 
 # Inetllij
 out/

@@ -9,8 +9,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.SplashController">
 <children>
-    <Pane style="-fx-background-color: #e2ddeb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <children>
+    <Pane style="-fx-background-color: #e2ddeb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <children>
             <Line endX="100.0" endY="565.0" startX="100.0" startY="10.0" stroke="navy" strokeLineCap="ROUND" strokeWidth="5.0" />
             <Line endX="790.0" endY="475.0" startX="10.0" startY="475.0" stroke="navy" strokeLineCap="ROUND" strokeWidth="5.0" />
             <Label layoutX="293.0" layoutY="88.0" text="YETI" textFill="navy">
@@ -21,9 +22,9 @@
             <Label layoutX="293.0" layoutY="156.0" text="Version 1.0" textFill="navy" />
             <Label fx:id="lblProgress" layoutX="585.0" layoutY="455.0" text="Loading" textFill="navy" />
             <Label layoutX="483.0" layoutY="508.0" text="Copyright ® 2018 SAD Software, Inc." textFill="navy" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="168.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="150.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@/com/sad/resources/yeti.png" />
+                    <Image url="@/com/sad/resources/loading.gif" />
                 </image>
             </ImageView>
             <ProgressBar fx:id="pbProgress" layoutX="585.0" layoutY="435.0" prefWidth="200.0" progress="0.0" />

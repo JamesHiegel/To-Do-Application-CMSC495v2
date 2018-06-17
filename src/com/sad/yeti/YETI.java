@@ -44,8 +44,7 @@ public class YETI extends Application {
         if (DBUtils.dbExists()) {
             DBUtils db = new DBUtils();
             LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.5));
-            System.out.println("DB Exists - Display Tables");
-            db.displayTables();
+            System.out.println("DB Exists");
         } else {
             DBUtils db = new DBUtils();
             LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.05));
@@ -56,8 +55,7 @@ public class YETI extends Application {
             db.createTables();
             LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.50));
             db.seedTables();
-            System.out.println("DB Does Not Exists - Display Tables");
-            db.displayTables();
+            System.out.println("DB Did Not Exist - Created");
         }
 
         for (int i = 6; i < COUNT_LIMIT; i++) {

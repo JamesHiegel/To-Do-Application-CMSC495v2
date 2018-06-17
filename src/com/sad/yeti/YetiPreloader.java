@@ -54,11 +54,10 @@ public class YetiPreloader extends Preloader {
         switch (type) {
             case BEFORE_START:
                 // Called after init and before start is called
-                System.out.println("BEFORE_START");
                 preloaderStage.hide();
                 break;
             default:
-                System.out.println(type);
+                //System.out.println(type);
                 break;
         }
     }
