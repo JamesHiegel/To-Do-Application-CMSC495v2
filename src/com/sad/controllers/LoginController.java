@@ -14,6 +14,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -43,6 +45,8 @@ public class LoginController  implements Initializable {
 
 
     }
+
+
 
     @FXML
     private void login_handleButtonAction(ActionEvent event) {
@@ -123,7 +127,12 @@ public class LoginController  implements Initializable {
             Parent root = null;
             try {
                 root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/MFA.fxml"));
+                EmailController.generateAndSendEmail();
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (AddressException e) {
+                e.printStackTrace();
+            } catch (MessagingException e) {
                 e.printStackTrace();
             }
 
@@ -131,6 +140,12 @@ public class LoginController  implements Initializable {
             stage.setScene(scene);
         }
     }
+
+    public String getLogin(){
+        String EMUNE = uname_login.getText();
+        return EMUNE;
+    }
+
 
     @FXML
     private void signUp_handleButtonAction(ActionEvent event) {
