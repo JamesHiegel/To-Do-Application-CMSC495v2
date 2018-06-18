@@ -122,7 +122,7 @@ public class LoginController  implements Initializable {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/yeti.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/MFA.fxml"));
             } catch (IOException e) {
                 e.printStackTrace();
             }

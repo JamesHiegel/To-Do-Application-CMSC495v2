@@ -7,6 +7,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.crypto.BadPaddingException;
@@ -89,6 +90,17 @@ public class Security {
             sb.append(message.substring(message.length()-4));
         }
         return sb.toString();
+    }
+
+    public static char[] OTP(int length) {
+        System.out.println( "Generating OTP." );
+        String numbers = "0123456789";
+        Random random = new Random();
+        char[] otp = new char[length];
+        for (int i = 0; i < length; i++) {
+            otp[i] = numbers.charAt( random.nextInt( numbers.length() ) );
+        }
+        return otp;
     }
 
 }

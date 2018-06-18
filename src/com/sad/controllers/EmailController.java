@@ -1,5 +1,7 @@
 package com.sad.controllers;
 
+import com.sad.utils.Security;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -26,16 +28,11 @@ public class EmailController {
     }
 
 
-    /** public static void main(String args[]) throws AddressException, MessagingException {
-     generateAndSendEmail();
-     System.out.println("\n\n ===> Your Java Program has just sent an Email successfully. Check your email..");
-     }
-     */
+
 
     public static void generateAndSendEmail() throws AddressException, MessagingException {
 
-        SEND = String.valueOf( KeyGenController.OTP( 6 ) );
-
+        SEND = String.valueOf( Security.OTP( 6 ) );
         // Step1
         System.out.println("\nSetting Up Mail Server..");
         mailServerProperties = System.getProperties();
