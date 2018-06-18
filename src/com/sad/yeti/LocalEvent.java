@@ -13,6 +13,12 @@ public class LocalEvent {
     private LocalDate date;
     private SimpleStringProperty description;
     private boolean personal;
+    private boolean notify;
+    private SimpleStringProperty tag;
+
+
+    public LocalEvent () {
+    }
 
     public LocalEvent(int priority, LocalDate date, String description, boolean personal) {
         this.priority = priority;
@@ -41,6 +47,10 @@ public class LocalEvent {
         return description.get();
     }
 
+    public void setDescription(String description) {
+        this.description = new SimpleStringProperty(description);
+    }
+
     public void setPersonal(boolean personal) {
         this.personal = personal;
     }
@@ -49,9 +59,13 @@ public class LocalEvent {
         return personal;
     }
 
-    public void setDescription(String description) {
-        this.description = new SimpleStringProperty(description);
-    }
+    public void setNotify(boolean notify) { this.notify = notify; }
+
+    public boolean getNotify() { return notify; }
+
+    public void setTag(String tag) { this.tag = new SimpleStringProperty(tag); }
+
+    public String getTag() { return tag.get(); }
 
     @Override
     public String toString(){

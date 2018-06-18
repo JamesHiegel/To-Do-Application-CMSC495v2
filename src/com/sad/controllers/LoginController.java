@@ -29,6 +29,7 @@ public class LoginController  implements Initializable {
     @FXML PasswordField pfield_login;
     @FXML Button login_button_login;
     @FXML Label noacc_label_login;
+    @FXML Label acc_label_error;
     @FXML Button snup_button_login;
 
     @Override
@@ -105,11 +106,11 @@ public class LoginController  implements Initializable {
                     status=true;
                     System.out.println("Login succeeded!");
                 } else {
-                    noacc_label_login.setText("Login failed, please try again!");
+                    acc_label_error.setText("Login failed, please try again!");
                     System.out.println("Login failed!");
                 }
             } else {
-                noacc_label_login.setText("Login failed, please try again!");
+                acc_label_error.setText("Login failed, please try again!");
             }
         } catch (SQLException ex) {
             System.out.println("ERROR: " + ex.getMessage());

@@ -151,6 +151,31 @@ public class DBUtils {
         }
     }
 
+    public static void addTask(LocalEvent le) {
+        Connection conn = null;
+        PreparedStatement pstmt;
+        try {
+            conn = DriverManager.getConnection(DB_URL);
+            pstmt = conn.prepareStatement("insert into Task values (next value for task_seq, ?, ?, ?, ?, ? )");
+            pstmt.setInt(   1, 1); //User ID  - Need to keep track of userid somewhere
+            pstmt.setInt(   2,    (le.getPersonal()?1:2)); //Task Type - 1=Personal, 2=Professional
+            pstmt.setInt(   3,    (le.getPriority())); //Priority - 1=High, 2=Medium, 3=Low
+            pstmt.setDate(  4,    java.sql.Date.valueOf(le.getDate())); //Date
+            pstmt.setString(5,    le.getDescription()); //Description
+            pstmt.execute();
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+    }
+
     public static ObservableList<LocalEvent> getPersonalTasks(int userID, String taskType) {
         Connection conn = null;
         ObservableList<LocalEvent> leList = FXCollections.observableArrayList();
@@ -161,7 +186,7 @@ public class DBUtils {
             if (taskType.equals("Personal")) personal=true;
 
             conn = DriverManager.getConnection(DB_URL);
-            pstmt = conn.prepareStatement("SELECT ts_id,  pr_id, ts_date, ts_descripton FROM Tasks JOIN Priority on ts_priority = pp_id JOIN Task_Type on ts_type = tt_id where ts_user_id = ? and tt_description = ?");
+            pstmt = conn.prepareStatement("SELECT ts_id,  pr_id, ts_date, ts_description FROM Task JOIN Priority on ts_priority = pr_id JOIN Task_Type on ts_type = tt_id where ts_user_id = ? and tt_description = ?");
             pstmt.setInt(1, userID);
             pstmt.setString( 2, taskType);
             rs = pstmt.executeQuery();
@@ -170,7 +195,7 @@ public class DBUtils {
                 int priorityID = rs.getInt( 2);
                 LocalDate date = rs.getDate(3).toLocalDate();
                 String description = rs.getString(4);
-                leList.add(new LocalEvent(priorityID, date,"ToDo 1", true));
+                leList.add(new LocalEvent(priorityID, date, description, personal));
             }
         } catch (SQLException ex) {
             System.out.println("ERROR: " + ex.getMessage());
@@ -185,6 +210,17 @@ public class DBUtils {
         }
         return leList;
     }
+
+    public static void closeDB() {
+        try {
+            System.out.println("Closing DB");
+            DriverManager.getConnection("jdbc:derby:YETI;shutdown=true");
+        } catch (SQLException ex) {
+            //System.out.println("ERROR: " + ex.getMessage());
+            //Always throws and exception, so we just need to ignore it here.
+        }
+    }
+
     public String getDbError() {
         return dbError;
     }

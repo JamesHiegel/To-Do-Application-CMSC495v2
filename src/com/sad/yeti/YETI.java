@@ -65,6 +65,12 @@ public class YETI extends Application {
         }
     }
 
+    @Override
+    public void stop() {
+        DBUtils.closeDB();
+
+    }
+
     /**
      * @param args the command line arguments
      */
