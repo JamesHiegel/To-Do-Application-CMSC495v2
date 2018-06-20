@@ -46,8 +46,6 @@ public class LoginController  implements Initializable {
 
     }
 
-
-
     @FXML
     private void login_handleButtonAction(ActionEvent event) {
 
@@ -140,12 +138,6 @@ public class LoginController  implements Initializable {
             stage.setScene(scene);
         }
     }
-
-    public String getLogin(){
-        String EMUNE = uname_login.getText();
-        return EMUNE;
-    }
-
 
     @FXML
     private void signUp_handleButtonAction(ActionEvent event) {

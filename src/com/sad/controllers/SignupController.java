@@ -30,6 +30,7 @@ public class SignupController implements Initializable {
     @FXML Label pfield_label_snup;
     @FXML PasswordField pfield_snup;
     @FXML Button snup_button_snup;
+    @FXML Button snup_cancel_button_snup1;
 
 
 
@@ -78,5 +79,21 @@ public class SignupController implements Initializable {
             Scene scene = new Scene(root);
             stage.setScene(scene);
         }
+    }
+
+    @FXML
+    private void cancel_signUpHandleButtonAction(ActionEvent event) {
+
+        // setting stage back to normal YETI application
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/yeti.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 }

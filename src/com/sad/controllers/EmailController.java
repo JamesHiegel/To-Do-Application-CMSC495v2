@@ -49,7 +49,7 @@ public class EmailController {
         System.out.println("\n\nGenerating Mail Session..");
         getMailSession = Session.getDefaultInstance(mailServerProperties, null);
         generateMailMessage = new MimeMessage(getMailSession);
-        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("Swapnilp618@gmail.com" ) );
+        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("pathikdesai10@gmail.com" ) );
         generateMailMessage.setSubject("Greetings from Swapnil..");
         String emailBody = "Secure Email by Swapnil. " + "<br><br> Your one time password is: " + SEND + "<br><br> Regards, <br>Swapnil";
         generateMailMessage.setContent(emailBody, "text/html");
