@@ -125,7 +125,7 @@ public class LoginController  implements Initializable {
             Parent root = null;
             try {
                 root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/MFA.fxml"));
-                EmailController.generateAndSendEmail();
+                EmailController.generateAndSendEmail(login_getUserName);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (AddressException e) {
