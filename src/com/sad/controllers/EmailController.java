@@ -34,7 +34,7 @@ public class EmailController {
 
 
 
-    public static void generateAndSendEmail() throws AddressException, MessagingException {
+    public static void generateAndSendEmail(String email) throws AddressException, MessagingException {
 
         SEND = String.valueOf( Security.OTP( 6 ) );
         // Step1
@@ -49,7 +49,7 @@ public class EmailController {
         System.out.println("\n\nGenerating Mail Session..");
         getMailSession = Session.getDefaultInstance(mailServerProperties, null);
         generateMailMessage = new MimeMessage(getMailSession);
-        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("pathikdesai10@gmail.com" ) );
+        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(email) );
         generateMailMessage.setSubject("Greetings from Swapnil..");
         String emailBody = "Secure Email by Swapnil. " + "<br><br> Your one time password is: " + SEND + "<br><br> Regards, <br>Swapnil";
         generateMailMessage.setContent(emailBody, "text/html");
