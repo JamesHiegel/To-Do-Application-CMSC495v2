@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/lib" />
+      <root url="file://$USER_HOME$/Desktop/db-derby-10.14.1.0-bin/db-derby-10.14.1.0-bin/lib" />
+      <root url="file://$USER_HOME$/Downloads/google-api-services-gmail-v1-rev91-java-1.23.0/gmail" />
+      <root url="file://$USER_HOME$/Downloads/google-api-services-gmail-v1-rev91-java-1.23.0/gmail/libs" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/google-api-services-gmail-v1-rev91-java-1.23.0/gmail" />
+      <root url="file://$USER_HOME$/Downloads/google-api-services-gmail-v1-rev91-java-1.23.0/gmail/libs" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Desktop/db-derby-10.14.1.0-bin/db-derby-10.14.1.0-bin/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/google-api-services-gmail-v1-rev91-java-1.23.0/gmail" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/google-api-services-gmail-v1-rev91-java-1.23.0/gmail/libs" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/src/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/google-api-services-gmail-v1-rev91-java-1.23.0/gmail" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/google-api-services-gmail-v1-rev91-java-1.23.0/gmail/libs" recursive="false" type="SOURCES" />
+  </library>
+</component>
