@@ -17,10 +17,13 @@ public class DBUtils {
     private Connection getConnection() {
         Connection conn = null;
         try {
+            Class.forName(DRIVER);
             conn = DriverManager.getConnection(DB_URL);
         } catch (SQLException ex) {
             dbError = "Connection to Database Failed.";
             System.out.println("ERROR: " + ex.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.out.println("ERROR: Class not found for " + DRIVER);
         }
         return conn;
     }
