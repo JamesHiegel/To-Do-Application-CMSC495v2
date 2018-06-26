@@ -10,33 +10,40 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="423.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141"
+
+<AnchorPane prefHeight="450.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.141"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.LoginController">
+
     <children>
-        <Pane style="-fx-background-color: #e2ddeb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+
+        <Pane style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <Button fx:id="login_button_login" layoutX="268.0" layoutY="212.0" mnemonicParsing="false" text="Login"
-                    onAction="#login_handleButtonAction" style="-fx-background-color: navy;" textFill="white" />
-            <PasswordField fx:id="pfield_login" layoutX="203.0" layoutY="169.0"/>
-            <TextField fx:id="uname_login" layoutX="203.0" layoutY="122.0"/>
-            <Label fx:id="uname_label_login" layoutX="124.0" layoutY="127.0" text="Username" textFill="navy" />
-            <Label fx:id="pwrd_label_login" layoutX="124.0" layoutY="171.0" text="Password" textFill="navy" />
-            <Label fx:id="banner_login_login" layoutX="203.0" layoutY="56.0" text="Please Login Below"
-                   textAlignment="CENTER" textFill="navy" >
-                <font>
-                    <Font size="22.0"/>
-                </font>
-            </Label>
-            <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="440.0" layoutY="25.0" pickOnBounds="true"
-                       preserveRatio="true">
+            <ImageView fitHeight="468.0" fitWidth="560.0" layoutX="0" layoutY="0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@/com/sad/resources/yeti.png"/>
+                    <Image url="@/com/sad/resources/YETI APP LOGIN SCREEN V2.png" />
                 </image>
             </ImageView>
+
+            <Button fx:id="snup_button_login" layoutX="228.0" layoutY="410.0" prefWidth="80.0" mnemonicParsing="false" text="Sign Up"
+                    onAction="#signUp_handleButtonAction" style="-fx-background-color: EDECEC;" textFill="565658" />
+            <Button fx:id="login_button_login" layoutX="233.0" layoutY="325.0"  prefWidth="75.0" mnemonicParsing="false" text="Login"
+                    onAction="#login_handleButtonAction" style="-fx-background-color: EDECEC;" textFill="565658" />
+            <PasswordField fx:id="pfield_login" layoutX="141.0" layoutY="275.6" prefWidth="262.0"     />
+            <TextField fx:id="uname_login" layoutX="141.0" layoutY="229.0" prefWidth="262.0" />
+            <Label fx:id="uname_label_login" layoutX="124.0" layoutY="80.0"  />
+            <Label fx:id="pwrd_label_login" layoutX="124.0" layoutY="171.0"  />
+            <Label fx:id="banner_login_login"  >
+                <font>
+                    <Font size="12.0"/>
+                </font>
+            </Label>
+
             <Label fx:id="acc_label_error" layoutX="217.0" layoutY="250.0" text="" textFill="red" />
-            <Label fx:id="noacc_label_login" layoutX="217.0" layoutY="302.0" text="Don't have an Account?" textFill="navy" />
-            <Button fx:id="snup_button_login" layoutX="262.0" layoutY="335.0" mnemonicParsing="false" text="Sign Up"
-                    onAction="#signUp_handleButtonAction" style="-fx-background-color: navy;" textFill="white" />
+            <Label fx:id="noacc_label_login"  />
+
+
         </Pane>
+
+
     </children>
 </AnchorPane>
