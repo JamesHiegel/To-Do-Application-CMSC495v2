@@ -127,4 +127,11 @@ public class YetiController implements Initializable {
         return localEvents;
     }
 
+
+    //controller for what happens when the ICON is clicked.
+
+
+
+
+
 }
