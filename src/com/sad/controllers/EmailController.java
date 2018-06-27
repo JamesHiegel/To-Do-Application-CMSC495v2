@@ -48,7 +48,7 @@ public class EmailController {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("Yetitoseeyou@outlook.com"));
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("swapnilp618@gmail.com"));
+                    InternetAddress.parse(args));
             message.setSubject("Your One Time Password");
             message.setText("Secure Email by Swapnil. " + "\nYour one time password is: " + SEND + "\nRegards, \nSwapnil");
             Transport.send(message);
