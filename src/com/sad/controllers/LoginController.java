@@ -14,16 +14,16 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.sql.*;
 import java.util.ResourceBundle;
 
 public class LoginController  implements Initializable {
 
 
+    private static int netavail;
     @FXML Label banner_login_login;
     @FXML Label uname_label_login;
     @FXML TextField uname_login;
@@ -41,7 +41,7 @@ public class LoginController  implements Initializable {
 
 
         //reference the handler
-       // login_button_login.setOnAction( this::login_handleButtonAction );
+        // login_button_login.setOnAction( this::login_handleButtonAction );
 
 
     }
@@ -63,9 +63,9 @@ public class LoginController  implements Initializable {
 
 
         //this is where we check where the uname & passwords match or not
-        int user_id=0;
-        int hitcnt=0;
-        boolean status=false;
+        int user_id = 0;
+        int hitcnt = 0;
+        boolean status = false;
 
         try {
             /**
@@ -79,24 +79,24 @@ public class LoginController  implements Initializable {
              }
              */
             Connection conn = null;
-            conn = DriverManager.getConnection("jdbc:derby:YETI;create=true");
+            conn = DriverManager.getConnection( "jdbc:derby:YETI;create=true" );
 
             String sql = "select us_id from users  where us_userName = ?";
 
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, login_getUserName);
+            PreparedStatement stmt = conn.prepareStatement( sql );
+            stmt.setString( 1, login_getUserName );
 
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                user_id = rs.getInt(1);
+                user_id = rs.getInt( 1 );
             }
 
             if (user_id > 0) {
                 String sql2 = "select us_id from users where us_id = ? and us_password = ?";
 
-                stmt = conn.prepareStatement(sql2);
-                stmt.setInt(1, user_id);
-                stmt.setString(2, Security.md5Hash(login_pfield_retrieve));
+                stmt = conn.prepareStatement( sql2 );
+                stmt.setInt( 1, user_id );
+                stmt.setString( 2, Security.md5Hash( login_pfield_retrieve ) );
                 stmt.executeQuery();
 
                 ResultSet rs2 = stmt.executeQuery();
@@ -104,36 +104,52 @@ public class LoginController  implements Initializable {
                     hitcnt++;
                 }
                 // Set to true if userid/password match
-                if(hitcnt>0){
-                    status=true;
-                    System.out.println("Login succeeded!");
+                if (hitcnt > 0) {
+                    status = true;
+                    System.out.println( "Login succeeded!" );
                 } else {
-                    acc_label_error.setText("Login failed, please try again!");
-                    System.out.println("Login failed!");
+                    acc_label_error.setText( "Login failed, please try again!" );
+                    System.out.println( "Login failed!" );
                 }
             } else {
-                acc_label_error.setText("Login failed, please try again!");
+                acc_label_error.setText( "Login failed, please try again!" );
             }
         } catch (SQLException ex) {
-            System.out.println("ERROR: " + ex.getMessage());
+            System.out.println( "ERROR: " + ex.getMessage() );
         }
 
-        // If successful login, then display the YETI application screen
-        if (status) {
-            // setting stage back to normal YETI application
+        //check for internet
+        if (netIsAvailable( netavail ) == 1) {
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/MFA.fxml"));
-               EmailController.generateAndSendEmail(login_getUserName);
+                root = FXMLLoader.load( getClass().getResource( "/com/sad/scenes/MFA.fxml" ) );
+                EmailController.generateAndSendEmail( login_getUserName );
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            Scene scene = new Scene( root );
+            stage.setScene( scene );
+
+        } else {
+            if (status) {
+                // setting stage back to normal YETI application
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Parent root = null;
+                try {
+                    root = FXMLLoader.load( getClass().getResource( "/com/sad/scenes/yeti.fxml" ) );
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                Scene scene = new Scene( root );
+                stage.setScene( scene );
+            }
         }
     }
+
 
     @FXML
     private void signUp_handleButtonAction(ActionEvent event) {
@@ -190,6 +206,26 @@ public class LoginController  implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
 
+    }
+
+
+    private int netIsAvailable(int netavail) {
+
+        try {
+            URL url = new URL("https://www.geeksforgeeks.org/");
+            URLConnection connection = url.openConnection();
+            connection.connect();
+
+            System.out.println("Connection Successful");
+            this.netavail = 1;
+        }
+        catch (Exception e) {
+            System.out.println("Internet Not Connected");
+            this.netavail = 0;
+        }
+
+
+        return netavail;
     }
 
 
