@@ -33,7 +33,7 @@
 
                 <ImageView fitHeight="400.0" fitWidth="300.0" layoutX="300.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@/com/sad/resources/LOADING-ANIMATIONS.gif" />
+                        <Image url="@/com/sad/resources/loading.gif" />
                     </image>
                 </ImageView>
                 <ProgressBar fx:id="pbProgress" layoutX="100.0" layoutY="350.0" prefWidth="680.0"          progress="0.0" />

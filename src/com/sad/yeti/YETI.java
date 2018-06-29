@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 public class YETI extends Application {
 
     private static final int COUNT_LIMIT = 10;
+    private static int userID;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -42,9 +43,16 @@ public class YETI extends Application {
 
         // Perform some heavy lifting (i.e. database start, check for application updates, etc. )
         if (DBUtils.dbExists()) {
-            DBUtils db = new DBUtils();
-            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.5));
             System.out.println("DB Exists");
+            DBUtils db = new DBUtils();
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.35));
+            double version = db.getVersion();
+            if (version == 0.0) db.createVersion();
+            if (version != 1.1) {
+                db.updateDatabase();
+                LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.35));
+            }
+            LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.5));
         } else {
             DBUtils db = new DBUtils();
             LauncherImpl.notifyPreloader(this, new Preloader.ProgressNotification(.05));
@@ -80,5 +88,12 @@ public class YETI extends Application {
         LauncherImpl.launchApplication(YETI.class, YetiPreloader.class, args);
 
     }
-    
+
+    public static int getUserID() {
+        return userID;
+    }
+
+    public static void setUserID(int userID) {
+        YETI.userID = userID;
+    }
 }

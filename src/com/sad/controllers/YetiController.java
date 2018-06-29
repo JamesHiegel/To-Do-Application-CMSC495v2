@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 import com.sad.database.DBUtils;
+import com.sad.yeti.YETI;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -105,25 +106,15 @@ public class YetiController implements Initializable {
 
     private ObservableList<LocalEvent> getPersonalEvents() {
         ObservableList<LocalEvent> localEvents = FXCollections.observableArrayList();
-        localEvents = DBUtils.getPersonalTasks(1, "Personal");
-        //localEvents.add(new LocalEvent(1, LocalDate.of(2018, Month.JUNE, 1),"ToDo 1", true));
-        //localEvents.add(new LocalEvent(3, LocalDate.of(2018, Month.JUNE, 1),"ToDo 2", true));
-        //localEvents.add(new LocalEvent(2, LocalDate.of(2018, Month.JUNE, 1),"ToDo 3", true));
-        //localEvents.add(new LocalEvent(3, LocalDate.of(2018, Month.JUNE, 1),"ToDo 4", true));
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
+        localEvents = DBUtils.getTasks(YETI.getUserID(), "Personal");
+
         return localEvents;
     }
     
     private ObservableList<LocalEvent> getProfessionalEvents() {
         ObservableList<LocalEvent> localEvents = FXCollections.observableArrayList();
-        localEvents = DBUtils.getPersonalTasks(1, "Professional");
-        //localEvents.add(new LocalEvent(1, LocalDate.of(2018, Month.JUNE, 2),"Professional ToDo 1", false));
-        //localEvents.add(new LocalEvent(3, LocalDate.of(2018, Month.JUNE, 3),"Professional ToDo 2", false));
-        //localEvents.add(new LocalEvent(2, LocalDate.of(2018, Month.JUNE, 4),"Professional ToDo 3", false));
-        //localEvents.add(new LocalEvent(1, LocalDate.of(2018, Month.JUNE, 5),"Professional ToDo 4", false));
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
+        localEvents = DBUtils.getTasks(YETI.getUserID(), "Professional");
+
         return localEvents;
     }
 

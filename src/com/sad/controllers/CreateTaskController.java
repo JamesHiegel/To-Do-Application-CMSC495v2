@@ -69,7 +69,7 @@ public class CreateTaskController  implements Initializable {
                 break;
         }
         le.setTag(tag.getText());
-        le.setNotify(sendEmail.isSelected());
+        le.setNotify(sendEmail.isSelected()?"Y":"N");
         System.out.println("Date : " + le.getDate());
         System.out.println("Description : " + le.getDescription());
         System.out.println("Task Type : " + (le.getPersonal()?"Personal":"Professional"));
