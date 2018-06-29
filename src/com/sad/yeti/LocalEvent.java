@@ -13,18 +13,20 @@ public class LocalEvent {
     private LocalDate date;
     private SimpleStringProperty description;
     private boolean personal;
-    private boolean notify;
+    private SimpleStringProperty notify;
     private SimpleStringProperty tag;
 
 
     public LocalEvent () {
     }
 
-    public LocalEvent(int priority, LocalDate date, String description, boolean personal) {
+    public LocalEvent(int priority, LocalDate date, String description, boolean personal, String tag, String notify) {
         this.priority = priority;
         this.date = date;
         this.description = new SimpleStringProperty(description);
         this.personal = personal;
+        this.tag = new SimpleStringProperty(tag);
+        this.notify = new SimpleStringProperty(notify);
     }
 
     public int getPriority() {
@@ -59,9 +61,9 @@ public class LocalEvent {
         return personal;
     }
 
-    public void setNotify(boolean notify) { this.notify = notify; }
+    public void setNotify(String notify) { this.notify = new SimpleStringProperty(notify); }
 
-    public boolean getNotify() { return notify; }
+    public String getNotify() { return notify.get(); }
 
     public void setTag(String tag) { this.tag = new SimpleStringProperty(tag); }
 

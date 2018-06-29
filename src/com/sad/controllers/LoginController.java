@@ -1,6 +1,7 @@
 package com.sad.controllers;
 
 import com.sad.utils.Security;
+import com.sad.yeti.YETI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -101,6 +102,7 @@ public class LoginController  implements Initializable {
             }
 
             if (user_id > 0) {
+                YETI.setUserID(user_id);
                 String sql2 = "select us_id from users where us_id = ? and us_password = ?";
 
                 stmt = conn.prepareStatement( sql2 );
