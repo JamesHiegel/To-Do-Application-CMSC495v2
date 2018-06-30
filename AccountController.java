@@ -25,16 +25,17 @@ public class AccountController implements Initializable {
 
     @FXML
     Button logout_button_account;
-    @FXML ColorPicker btnPickColor;
+    @FXML
+    Button noLogout;
 
 
     //method here
 
 
-    public void logoutButtonHandleOnAction(javafx.event.ActionEvent event ) {
+    public void logoutButtonHandleOnAction(javafx.event.ActionEvent event) {
 
-        // setting stage back to normal YETI application
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        // setting stage back to login Screen
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/login.fxml"));
@@ -46,9 +47,21 @@ public class AccountController implements Initializable {
         stage.setScene(scene);
     }
 
+    // setting stage back to YETI application
+    public void cancelButtonHandleOnAction(javafx.event.ActionEvent event) {
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/yeti.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
 
     }
-
+}
 
 
 
