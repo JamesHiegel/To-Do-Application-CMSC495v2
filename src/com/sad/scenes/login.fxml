@@ -11,27 +11,36 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<AnchorPane prefHeight="450.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.141"
+<?import javafx.scene.effect.DropShadow?>
+<AnchorPane prefHeight="500.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8.0.141"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.LoginController">
 
     <children>
 
         <Pane style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <ImageView fitHeight="468.0" fitWidth="560.0" layoutX="0" layoutY="0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="530.0" fitWidth="1080.0" layoutX="-44" layoutY="-6" pickOnBounds="true" preserveRatio="true">
                 <image>
                     <Image url="@/com/sad/resources/YETI APP LOGIN SCREEN V2.png" />
                 </image>
             </ImageView>
 
-            <Button fx:id="snup_button_login" layoutX="228.0" layoutY="410.0" prefWidth="80.0" mnemonicParsing="false" text="Sign Up"
-                    onAction="#signUp_handleButtonAction" style="-fx-background-color: EDECEC;" textFill="565658" />
-            <Button fx:id="login_button_login" layoutX="233.0" layoutY="325.0"  prefWidth="75.0" mnemonicParsing="false" text="Login"
-                    onAction="#login_handleButtonAction" style="-fx-background-color: EDECEC;" textFill="565658" />
-            <PasswordField fx:id="pfield_login" layoutX="141.0" layoutY="275.6" prefWidth="262.0"     />
-            <TextField fx:id="uname_login" layoutX="141.0" layoutY="229.0" prefWidth="262.0" />
-            <Label fx:id="uname_label_login" layoutX="124.0" layoutY="80.0"  />
-            <Label fx:id="pwrd_label_login" layoutX="124.0" layoutY="171.0"  />
+            <Button fx:id="snup_button_login" layoutX="288" layoutY="420" prefWidth="88.7" mnemonicParsing="false" text="Sign Up"
+                    onAction="#signUp_handleButtonAction" style="-fx-background-color: EDECEC;" textFill="565658" >
+            <effect>
+                <DropShadow />
+            </effect>
+            </Button>
+            <Button fx:id="login_button_login" layoutX="292" layoutY="343.0"  prefWidth="75.0" mnemonicParsing="false" text="Login"
+                    onAction="#login_handleButtonAction" style="-fx-background-color: EDECEC;" textFill="565658" >
+            <effect>
+                <DropShadow />
+            </effect>
+            </Button>
+            <PasswordField fx:id="pfield_login" layoutX="227.0" layoutY="282.6" prefWidth="262.0"     />
+            <TextField fx:id="uname_login" layoutX="227.0" layoutY="233" prefWidth="262.0" />
+            <Label fx:id="uname_label_login" layoutX="110.0" layoutY="80.0"  />
+            <Label fx:id="pwrd_label_login" layoutX="122.0" layoutY="171.0"  />
             <Label fx:id="banner_login_login"  >
                 <font>
                     <Font size="12.0"/>
