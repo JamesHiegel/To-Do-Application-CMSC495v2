@@ -47,7 +47,7 @@
                 </font>
             </Label>
 
-            <Label fx:id="acc_label_error" layoutX="217.0" layoutY="250.0" text="" textFill="red" />
+            <Label fx:id="acc_label_error" layoutX="217.0" layoutY="360.0" text="" textFill="red" />
             <Label fx:id="noacc_label_login"  />
 
 

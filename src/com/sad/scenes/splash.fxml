@@ -29,6 +29,7 @@
                 <ImageView fitHeight="300.0" fitWidth="238.0" layoutX="305.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@/com/sad/resources/LOADING-ANIMATION-v2.gif" />
+                        <!-- Image url="@/com/sad/resources/loading.gif" / -->
                     </image>
                 </ImageView>
 
