@@ -101,7 +101,15 @@ public class YetiController implements Initializable {
 
     @FXML
     private void deleteItem(ActionEvent event) {
-
+        LocalEvent le = personalTableView.getSelectionModel().getSelectedItem();
+        if (le == null) le = professionalTableView.getSelectionModel().getSelectedItem();
+        if (le != null) {
+            DBUtils.deleteTask(le);
+            personalTableView.setItems(getPersonalEvents());
+            professionalTableView.setItems(getProfessionalEvents());
+        } else {
+            System.out.println("Nothing Selected");
+        }
     }
 
     private ObservableList<LocalEvent> getPersonalEvents() {
