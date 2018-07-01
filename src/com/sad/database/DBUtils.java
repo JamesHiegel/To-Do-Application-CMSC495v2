@@ -234,6 +234,28 @@ public class DBUtils {
         }
     }
 
+    public static void deleteTask(LocalEvent le) {
+        Connection conn = null;
+        PreparedStatement pstmt;
+        try {
+            conn = DriverManager.getConnection(DB_URL);
+            pstmt = conn.prepareStatement("DELETE FROM Task WHERE ts_id = ?");
+            pstmt.setInt(1, le.getRecordID());
+            pstmt.execute();
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+
+    }
+
     public static void addTask(LocalEvent le) {
         Connection conn = null;
         PreparedStatement pstmt;
@@ -292,7 +314,7 @@ public class DBUtils {
                 String customTag = rs.getString(5);
                 String notify = rs.getString(6);
 
-                leList.add(new LocalEvent(priorityID, date, description, personal, customTag, notify));
+                leList.add(new LocalEvent(taskID, priorityID, date, description, personal, customTag, notify));
             }
         } catch (SQLException ex) {
             System.out.println("ERROR: " + ex.getMessage());
