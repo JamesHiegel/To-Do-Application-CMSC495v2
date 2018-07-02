@@ -9,23 +9,31 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class LocalEvent {
 
+    private int recordID;
     private int priority;
     private LocalDate date;
     private SimpleStringProperty description;
     private boolean personal;
-    private boolean notify;
+    private SimpleStringProperty notify;
     private SimpleStringProperty tag;
 
 
     public LocalEvent () {
     }
 
-    public LocalEvent(int priority, LocalDate date, String description, boolean personal) {
+    public LocalEvent(int recordID, int priority, LocalDate date, String description, boolean personal, String tag, String notify) {
+        this.recordID = recordID;
         this.priority = priority;
         this.date = date;
         this.description = new SimpleStringProperty(description);
         this.personal = personal;
+        this.tag = new SimpleStringProperty(tag);
+        this.notify = new SimpleStringProperty(notify);
     }
+
+    public int getRecordID() { return recordID; }
+
+    public void setRecordID(int recordID) { this.recordID = recordID; }
 
     public int getPriority() {
         return priority;
@@ -59,9 +67,9 @@ public class LocalEvent {
         return personal;
     }
 
-    public void setNotify(boolean notify) { this.notify = notify; }
+    public void setNotify(String notify) { this.notify = new SimpleStringProperty(notify); }
 
-    public boolean getNotify() { return notify; }
+    public String getNotify() { return notify.get(); }
 
     public void setTag(String tag) { this.tag = new SimpleStringProperty(tag); }
 

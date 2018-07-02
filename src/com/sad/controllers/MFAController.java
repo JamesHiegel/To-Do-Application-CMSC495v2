@@ -1,6 +1,5 @@
 package com.sad.controllers;
 
-import com.sad.utils.Security;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -37,21 +38,25 @@ public class MFAController implements Initializable {
 
         Stage stage = null;
         Parent root = null;
-        if (get_otp.equals( EmailController.getSEND() )) {
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            root = null;
-            try {
-                root = FXMLLoader.load( getClass().getResource( "/com/sad/scenes/yeti.fxml" ) );
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
 
-        } else {
-            hitcount++;
-            System.out.println( "Wrong OTP" );
+
+            if (get_otp.equals( EmailController.getSEND() )) {
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                try {
+                    root = null;
+                    root = FXMLLoader.load( getClass().getResource( "/com/sad/scenes/yeti.fxml" ) );
+                } catch (java.io.IOException e) {
+                    e.printStackTrace();
+
+                }
+
+            } else {
+                JOptionPane.showMessageDialog( null, "Please enter a valid PIN!","Alert!",JOptionPane.ERROR_MESSAGE,null);
+                hitcount++;
+            }
+            Scene scene = new Scene( root );
+            stage.setScene( scene );
         }
-        Scene scene = new Scene( root );
-        stage.setScene( scene );
     }
 
 
@@ -59,5 +64,4 @@ public class MFAController implements Initializable {
 
 
 
-}
 

@@ -10,27 +10,38 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.SignupController">
+<?import javafx.scene.effect.DropShadow?>
+<AnchorPane prefHeight="500.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.SignupController">
     <children>
-        <Pane style="-fx-background-color: #e2ddeb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <Label fx:id="signup_banner_snup" layoutX="203.0" layoutY="56.0" text="Sign Up Below!" textAlignment="CENTER" textFill="navy">
-                <font>
-                    <Font name="Arial" size="22.0" />
-                </font>
-            </Label>
-            <PasswordField fx:id="pfield_snup" layoutX="203.0" layoutY="169.0" />
-            <TextField fx:id="uname_snup" layoutX="203.0" layoutY="122.0" />
-            <Label fx:id="uname_label_snup" layoutX="124.0" layoutY="127.0" text="Username" textFill="navy">
-            </Label>
-            <Label fx:id="pfield_label_snup" layoutX="124.0" layoutY="171.0" text="Password" textFill="navy">
-            </Label>
-            <Button fx:id="snup_button_snup" layoutX="268.0" layoutY="212.0" mnemonicParsing="false" onAction="#signUp_handleButtonAction" style="-fx-background-color: navy;" text="Sign Up!" textFill="white" />
-            <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="440.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+        <Pane style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+            <ImageView fitHeight="530.0" fitWidth="1080.0" layoutX="-30" layoutY="0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@/com/sad/resources/yeti.png" />
+                    <Image url="@/com/sad/resources/YETI APP SIGN UP SCREEN V2.png" />
                 </image>
             </ImageView>
-         <Button fx:id="snup_cancel_button_snup1" layoutX="268.0" layoutY="275.0" mnemonicParsing="false" onAction="#cancel_signUpHandleButtonAction" style="-fx-background-color: navy;" text="Go Back" textFill="white" />
+
+
+            <Label fx:id="signup_banner_snup" />
+
+
+            <PasswordField fx:id="pfield_snup" layoutX="266.0" layoutY="291.6" prefWidth="270" />
+            <TextField fx:id="uname_snup" layoutX="266.0" layoutY="245.7" prefWidth="270" />
+            <Label fx:id="uname_label_snup" >
+            </Label>
+            <Label fx:id="pfield_label_snup" >
+            </Label>
+            <Button fx:id="snup_button_snup" layoutX="245.0" layoutY="395.0" prefWidth="86" mnemonicParsing="false" onAction="#signUp_handleButtonAction" style="-fx-background-color: EDECEC;" text="Sign Up!" textFill="565658" >
+                <effect>
+                    <DropShadow />
+                </effect>
+            </Button>
+
+         <Button fx:id="snup_cancel_button_snup1" layoutX="346.4" layoutY="395.0" prefWidth="90" mnemonicParsing="false" onAction="#cancel_signUpHandleButtonAction" style="-fx-background-color: EDECEC;" text="Go Back" textFill="565658" >
+             <effect>
+                 <DropShadow />
+             </effect>
+         </Button>
         </Pane>
     </children>
 </AnchorPane>

@@ -1,6 +1,7 @@
 package com.sad.database;
 
 import com.sad.yeti.LocalEvent;
+import com.sad.yeti.YETI;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -83,7 +84,84 @@ public class DBUtils {
             pstmt.execute();
             pstmt = conn.prepareStatement("CREATE TABLE Task_type (tt_id integer primary key, tt_description varchar(20) not null)");
             pstmt.execute();
-            pstmt = conn.prepareStatement("CREATE TABLE Task (ts_id integer Primary Key, ts_user_id integer not null references users(us_id), ts_type integer not null references task_type(tt_id), ts_priority integer not null references priority(pr_id), ts_date date not null, ts_description varchar(255) not null)");
+            /*
+                JT - 06/28:
+                Modified to add ts_custom_tag, ts_notify, and ts_notfied columns
+            */
+            pstmt = conn.prepareStatement("CREATE TABLE Task (ts_id integer Primary Key, ts_user_id integer not null references users(us_id), ts_type integer not null references task_type(tt_id), ts_priority integer not null references priority(pr_id), ts_date date not null, ts_description varchar(255) not null, ts_custom_tag varchar(30), ts_notify char, ts_notified char)");
+            pstmt.execute();
+            pstmt = conn.prepareStatement("CREATE TABLE Version (version double primary key)");
+            pstmt.execute();
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+    }
+
+    public Double getVersion() {
+        Connection conn = null;
+        PreparedStatement pstmt;
+        ResultSet rs;
+        Double version=0.0;
+        try {
+            conn = getConnection();
+            pstmt = conn.prepareStatement("SELECT version from Version");
+            rs = pstmt.executeQuery();
+            while (rs.next())
+                version = rs.getDouble(1);
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+        return version;
+    }
+
+    public void createVersion() {
+        Connection conn = null;
+        PreparedStatement pstmt;
+        try {
+            conn = getConnection();
+            pstmt = conn.prepareStatement("CREATE TABLE Version (version double primary key)");
+            pstmt.execute();
+            pstmt = conn.prepareStatement("INSERT INTO Version VALUES (1.1)");
+            pstmt.execute();
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+    }
+
+    public void updateDatabase() {
+        Connection conn = null;
+        PreparedStatement pstmt;
+        try {
+            conn = getConnection();
+            pstmt = conn.prepareStatement("ALTER TABLE Task ADD ts_custom_tag varchar(30)");
+            pstmt.execute();
+            pstmt = conn.prepareStatement("ALTER TABLE Task ADD ts_notify char");
+            pstmt.execute();
+            pstmt = conn.prepareStatement("ALTER TABLE Task ADD ts_notified char");
             pstmt.execute();
         } catch (SQLException ex) {
             System.out.println("ERROR: " + ex.getMessage());
@@ -113,6 +191,8 @@ public class DBUtils {
             pstmt.executeUpdate();
             pstmt = conn.prepareStatement("INSERT INTO Task_type VALUES (2, 'Professional')");
             pstmt.executeUpdate();
+            pstmt = conn.prepareStatement("INSERT INTO Version VALUES (1.1)");
+            pstmt.execute();
         } catch (SQLException ex) {
             System.out.println("ERROR: " + ex.getMessage());
         } finally {
@@ -154,17 +234,41 @@ public class DBUtils {
         }
     }
 
+    public static void deleteTask(LocalEvent le) {
+        Connection conn = null;
+        PreparedStatement pstmt;
+        try {
+            conn = DriverManager.getConnection(DB_URL);
+            pstmt = conn.prepareStatement("DELETE FROM Task WHERE ts_id = ?");
+            pstmt.setInt(1, le.getRecordID());
+            pstmt.execute();
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+
+    }
+
     public static void addTask(LocalEvent le) {
         Connection conn = null;
         PreparedStatement pstmt;
         try {
             conn = DriverManager.getConnection(DB_URL);
-            pstmt = conn.prepareStatement("insert into Task values (next value for task_seq, ?, ?, ?, ?, ? )");
-            pstmt.setInt(   1, 1); //User ID  - Need to keep track of userid somewhere
+            pstmt = conn.prepareStatement("insert into Task values (next value for task_seq, ?, ?, ?, ?, ?, ?, ?, null)");
+            pstmt.setInt(   1, YETI.getUserID());
             pstmt.setInt(   2,    (le.getPersonal()?1:2)); //Task Type - 1=Personal, 2=Professional
             pstmt.setInt(   3,    (le.getPriority())); //Priority - 1=High, 2=Medium, 3=Low
             pstmt.setDate(  4,    java.sql.Date.valueOf(le.getDate())); //Date
             pstmt.setString(5,    le.getDescription()); //Description
+            pstmt.setString(6, le.getTag()); //Custom Tag
+            pstmt.setString(7, le.getNotify()); //Notify
             pstmt.execute();
         } catch (SQLException ex) {
             System.out.println("ERROR: " + ex.getMessage());
@@ -179,7 +283,11 @@ public class DBUtils {
         }
     }
 
-    public static ObservableList<LocalEvent> getPersonalTasks(int userID, String taskType) {
+    /*
+        JT - 06/28:
+        Renamed getPersonalTasks to getTasks since it handles both.
+     */
+    public static ObservableList<LocalEvent> getTasks(int userID, String taskType) {
         Connection conn = null;
         ObservableList<LocalEvent> leList = FXCollections.observableArrayList();
         PreparedStatement pstmt;
@@ -189,7 +297,7 @@ public class DBUtils {
             if (taskType.equals("Personal")) personal=true;
 
             conn = DriverManager.getConnection(DB_URL);
-            pstmt = conn.prepareStatement("SELECT ts_id,  pr_id, ts_date, ts_description FROM Task JOIN Priority on ts_priority = pr_id JOIN Task_Type on ts_type = tt_id where ts_user_id = ? and tt_description = ?");
+            pstmt = conn.prepareStatement("SELECT ts_id,  pr_id, ts_date, ts_description, ts_custom_tag, ts_notify FROM Task JOIN Priority on ts_priority = pr_id JOIN Task_Type on ts_type = tt_id where ts_user_id = ? and tt_description = ?");
             pstmt.setInt(1, userID);
             pstmt.setString( 2, taskType);
             rs = pstmt.executeQuery();
@@ -198,7 +306,15 @@ public class DBUtils {
                 int priorityID = rs.getInt( 2);
                 LocalDate date = rs.getDate(3).toLocalDate();
                 String description = rs.getString(4);
-                leList.add(new LocalEvent(priorityID, date, description, personal));
+
+                /*
+                    JT - 06:28:
+                    Added setting the following to be passed to LocalEvent
+                 */
+                String customTag = rs.getString(5);
+                String notify = rs.getString(6);
+
+                leList.add(new LocalEvent(taskID, priorityID, date, description, personal, customTag, notify));
             }
         } catch (SQLException ex) {
             System.out.println("ERROR: " + ex.getMessage());
