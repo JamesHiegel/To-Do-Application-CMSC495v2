@@ -10,6 +10,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import com.sad.database.DBUtils;
@@ -27,15 +28,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import com.sad.yeti.LocalEvent;
 import java.time.Month;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -104,9 +103,19 @@ public class YetiController implements Initializable {
         LocalEvent le = personalTableView.getSelectionModel().getSelectedItem();
         if (le == null) le = professionalTableView.getSelectionModel().getSelectedItem();
         if (le != null) {
-            DBUtils.deleteTask(le);
-            personalTableView.setItems(getPersonalEvents());
-            professionalTableView.setItems(getProfessionalEvents());
+            Alert deleteAlert = new Alert(Alert.AlertType.CONFIRMATION);
+            deleteAlert.setTitle("Deleting Item");
+            deleteAlert.setHeaderText("Are you sure you want to delete?");
+            Optional<ButtonType> option = deleteAlert.showAndWait();
+            if(option.get() == ButtonType.OK) {
+                System.out.println("Worked!");
+                DBUtils.deleteTask(le);
+                personalTableView.setItems(getPersonalEvents());
+                professionalTableView.setItems(getProfessionalEvents());
+            } else {
+                System.out.println("Deletion Cancelled");
+            }
+
         } else {
             System.out.println("Nothing Selected");
         }
