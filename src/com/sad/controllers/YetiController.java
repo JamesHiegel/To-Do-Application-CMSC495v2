@@ -30,6 +30,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import com.sad.yeti.LocalEvent;
@@ -49,7 +50,7 @@ public class YetiController implements Initializable {
     @FXML private Button btnAddItem;
     @FXML private Button btnDeleteItem;
     @FXML private Label lblDate;
-    @FXML private ImageView settings;
+    @FXML private ImageView account_icon;
     @FXML private TableView<LocalEvent> personalTableView;
     @FXML private TableColumn<LocalEvent, Integer> personalPriorityColumn;
     @FXML private TableColumn<LocalEvent, LocalDate> personalDateColumn;
@@ -119,6 +120,20 @@ public class YetiController implements Initializable {
         } else {
             System.out.println("Nothing Selected");
         }
+    }
+
+    /**
+     * Author: Amanda
+     * @param event
+     * @throws IOException
+     */
+    @FXML
+    private void account(MouseEvent event) throws IOException {
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/account.fxml"));
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
     private ObservableList<LocalEvent> getPersonalEvents() {
