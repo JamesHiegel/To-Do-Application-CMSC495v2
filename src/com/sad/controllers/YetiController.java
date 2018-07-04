@@ -55,11 +55,16 @@ public class YetiController implements Initializable {
     @FXML private TableColumn<LocalEvent, Integer> personalPriorityColumn;
     @FXML private TableColumn<LocalEvent, LocalDate> personalDateColumn;
     @FXML private TableColumn<LocalEvent, String> personalItemColumn;
+    @FXML private TableColumn<LocalEvent, String> personalTagColumn;
+    @FXML private TableColumn<LocalEvent, String> personalNotifyColumn;
+
     @FXML private TableView<LocalEvent> professionalTableView;
     @FXML private TableColumn<LocalEvent, Integer> professionalPriorityColumn;
     @FXML private TableColumn<LocalEvent, LocalDate> professionalDateColumn;
     @FXML private TableColumn<LocalEvent, String> professionalItemColumn;
-    
+    @FXML private TableColumn<LocalEvent, String> professionalTagColumn;
+    @FXML private TableColumn<LocalEvent, String> professionalNotifyColumn;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -67,6 +72,8 @@ public class YetiController implements Initializable {
         personalPriorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
         personalDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         personalItemColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        personalTagColumn.setCellValueFactory(new PropertyValueFactory<>("tag"));
+        personalNotifyColumn.setCellValueFactory(new PropertyValueFactory<>("notify"));
 
         //load dummy data
         personalTableView.setItems(getPersonalEvents());
@@ -75,6 +82,8 @@ public class YetiController implements Initializable {
         professionalPriorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
         professionalDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         professionalItemColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        professionalTagColumn.setCellValueFactory(new PropertyValueFactory<>("tag"));
+        professionalNotifyColumn.setCellValueFactory(new PropertyValueFactory<>("notify"));
 
         //load dummy data
         professionalTableView.setItems(getProfessionalEvents());
