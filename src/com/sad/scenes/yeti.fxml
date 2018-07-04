@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.YetiController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.YetiController">
    <children>
       <SplitPane dividerPositions="0.5" prefHeight="575.0" prefWidth="800.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="59.0">
          <items>
@@ -26,6 +26,8 @@
                         <TableColumn fx:id="personalDateColumn" prefWidth="100.0" text="Date" />
                         <TableColumn fx:id="personalPriorityColumn" prefWidth="55.0" text="Priority" />
                         <TableColumn fx:id="personalItemColumn" prefWidth="230.0" text="Item" />
+                        <TableColumn fx:id="personalTagColumn" prefWidth="55" text="Tag" />
+                        <TableColumn fx:id="personalNotifyColumn" prefWidth="100" text="Notify" />
                      </columns>
                   </TableView>
                </children>
@@ -42,6 +44,8 @@
                         <TableColumn fx:id="professionalDateColumn" prefWidth="100.0" text="Date" />
                         <TableColumn fx:id="professionalPriorityColumn" prefWidth="55.0" text="Priority" />
                         <TableColumn fx:id="professionalItemColumn" prefWidth="230.0" text="Item" />
+                        <TableColumn fx:id="professionalTagColumn" prefWidth="55" text="Tag" />
+                        <TableColumn fx:id="professionalNotifyColumn" prefWidth="100" text="Notify" />
                      </columns>
                   </TableView>
                </children>
