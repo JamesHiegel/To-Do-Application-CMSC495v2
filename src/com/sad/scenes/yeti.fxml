@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.YetiController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.YetiController">
    <children>
       <SplitPane dividerPositions="0.5" prefHeight="575.0" prefWidth="800.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="59.0">
          <items>
@@ -21,6 +26,8 @@
                         <TableColumn fx:id="personalDateColumn" prefWidth="100.0" text="Date" />
                         <TableColumn fx:id="personalPriorityColumn" prefWidth="55.0" text="Priority" />
                         <TableColumn fx:id="personalItemColumn" prefWidth="230.0" text="Item" />
+                        <TableColumn fx:id="personalTagColumn" prefWidth="55" text="Tag" />
+                        <TableColumn fx:id="personalNotifyColumn" prefWidth="100" text="Notify" />
                      </columns>
                   </TableView>
                </children>
@@ -37,6 +44,8 @@
                         <TableColumn fx:id="professionalDateColumn" prefWidth="100.0" text="Date" />
                         <TableColumn fx:id="professionalPriorityColumn" prefWidth="55.0" text="Priority" />
                         <TableColumn fx:id="professionalItemColumn" prefWidth="230.0" text="Item" />
+                        <TableColumn fx:id="professionalTagColumn" prefWidth="55" text="Tag" />
+                        <TableColumn fx:id="professionalNotifyColumn" prefWidth="100" text="Notify" />
                      </columns>
                   </TableView>
                </children>
@@ -47,14 +56,14 @@
          <children>
             <HBox layoutX="19.0" layoutY="10.0" spacing="5.0" AnchorPane.leftAnchor="19.0">
                <children>
-                  <Button fx:id="btnAddItem" mnemonicParsing="false" onAction="#addItem" prefHeight="20.0" prefWidth="130.0" text="Add Item" style="-fx-background-color: navy;" textFill="white" />
-                  <Button fx:id="btnDeleteItem" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="130.0" text="Delete Item" style="-fx-background-color: navy;" textFill="white" />
+                  <Button fx:id="btnAddItem" mnemonicParsing="false" onAction="#addItem" prefHeight="20.0" prefWidth="130.0" style="-fx-background-color: navy;" text="Add Item" textFill="white" />
+                  <Button fx:id="btnDeleteItem" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: navy;" text="Delete Item" textFill="white" />
                </children>
             </HBox>
          </children>
       </AnchorPane>
       <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutY="23.0" text="06/01/2018 19:16" textAlignment="CENTER" AnchorPane.rightAnchor="70.0" />
-      <ImageView fx:id="settings" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" y="7.0" AnchorPane.rightAnchor="19.0">
+      <ImageView fx:id="account_icon" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#account" pickOnBounds="true" preserveRatio="true" y="7.0" AnchorPane.rightAnchor="19.0">
          <image>
             <Image url="@/com/sad/resources/settings.png" />
          </image>
@@ -63,7 +72,7 @@
          <children>
             <HBox alignment="CENTER" layoutX="19.0" layoutY="4.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0">
                <children>
-                  <Label fx:id="lblCopyright" text="Copyright ® 2018 SAD Software, Inc." textFill="navy"/>
+                  <Label fx:id="lblCopyright" text="Copyright ® 2018 SAD Software, Inc." textFill="navy" />
                </children>
             </HBox>
          </children>

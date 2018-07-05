@@ -30,6 +30,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import com.sad.yeti.LocalEvent;
@@ -49,16 +50,21 @@ public class YetiController implements Initializable {
     @FXML private Button btnAddItem;
     @FXML private Button btnDeleteItem;
     @FXML private Label lblDate;
-    @FXML private ImageView settings;
+    @FXML private ImageView account_icon;
     @FXML private TableView<LocalEvent> personalTableView;
     @FXML private TableColumn<LocalEvent, Integer> personalPriorityColumn;
     @FXML private TableColumn<LocalEvent, LocalDate> personalDateColumn;
     @FXML private TableColumn<LocalEvent, String> personalItemColumn;
+    @FXML private TableColumn<LocalEvent, String> personalTagColumn;
+    @FXML private TableColumn<LocalEvent, String> personalNotifyColumn;
+
     @FXML private TableView<LocalEvent> professionalTableView;
     @FXML private TableColumn<LocalEvent, Integer> professionalPriorityColumn;
     @FXML private TableColumn<LocalEvent, LocalDate> professionalDateColumn;
     @FXML private TableColumn<LocalEvent, String> professionalItemColumn;
-    
+    @FXML private TableColumn<LocalEvent, String> professionalTagColumn;
+    @FXML private TableColumn<LocalEvent, String> professionalNotifyColumn;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -66,6 +72,8 @@ public class YetiController implements Initializable {
         personalPriorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
         personalDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         personalItemColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        personalTagColumn.setCellValueFactory(new PropertyValueFactory<>("tag"));
+        personalNotifyColumn.setCellValueFactory(new PropertyValueFactory<>("notify"));
 
         //load dummy data
         personalTableView.setItems(getPersonalEvents());
@@ -74,6 +82,8 @@ public class YetiController implements Initializable {
         professionalPriorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
         professionalDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         professionalItemColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        professionalTagColumn.setCellValueFactory(new PropertyValueFactory<>("tag"));
+        professionalNotifyColumn.setCellValueFactory(new PropertyValueFactory<>("notify"));
 
         //load dummy data
         professionalTableView.setItems(getProfessionalEvents());
@@ -119,6 +129,20 @@ public class YetiController implements Initializable {
         } else {
             System.out.println("Nothing Selected");
         }
+    }
+
+    /**
+     * Author: Amanda
+     * @param event
+     * @throws IOException
+     */
+    @FXML
+    private void account(MouseEvent event) throws IOException {
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/account.fxml"));
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
     private ObservableList<LocalEvent> getPersonalEvents() {
