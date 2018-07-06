@@ -70,14 +70,17 @@ public class CreateTaskController  implements Initializable {
             okButton.setOnAction(ev -> {
                 if(datePicker.getValue()==null) {
                     le.setDate(LocalDate.now());
+                    stage.close();
                 } else le.setDate(datePicker.getValue()); stage.close();
             });
             HBox hbox = new HBox(datePicker, okButton);
             Scene scene = new Scene(hbox, 300,100);
             stage.setScene(scene);
             stage.showAndWait();
-
         } else le.setDate(date.getValue());
+        if(date.getValue()==null) {
+            le.setDate(LocalDate.now());
+        }
         le.setDescription(descr.getText());
         le.setPersonal(tasktype.getValue().toString().equalsIgnoreCase("Personal"));
         switch (priority.getValue().toString()) {
