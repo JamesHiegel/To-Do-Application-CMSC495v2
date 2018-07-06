@@ -101,6 +101,7 @@ public class YetiController implements Initializable {
 
     @FXML
     private void addItem(ActionEvent event) throws IOException {
+        LocalEvent le = new LocalEvent();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/createTask.fxml"));
 
