@@ -10,6 +10,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import com.sad.database.DBUtils;
@@ -27,15 +28,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import com.sad.yeti.LocalEvent;
 import java.time.Month;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -50,16 +50,21 @@ public class YetiController implements Initializable {
     @FXML private Button btnAddItem;
     @FXML private Button btnDeleteItem;
     @FXML private Label lblDate;
-    @FXML private ImageView settings;
+    @FXML private ImageView account_icon;
     @FXML private TableView<LocalEvent> personalTableView;
     @FXML private TableColumn<LocalEvent, Integer> personalPriorityColumn;
     @FXML private TableColumn<LocalEvent, LocalDate> personalDateColumn;
     @FXML private TableColumn<LocalEvent, String> personalItemColumn;
+    @FXML private TableColumn<LocalEvent, String> personalTagColumn;
+    @FXML private TableColumn<LocalEvent, String> personalNotifyColumn;
+
     @FXML private TableView<LocalEvent> professionalTableView;
     @FXML private TableColumn<LocalEvent, Integer> professionalPriorityColumn;
     @FXML private TableColumn<LocalEvent, LocalDate> professionalDateColumn;
     @FXML private TableColumn<LocalEvent, String> professionalItemColumn;
-    
+    @FXML private TableColumn<LocalEvent, String> professionalTagColumn;
+    @FXML private TableColumn<LocalEvent, String> professionalNotifyColumn;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -67,6 +72,8 @@ public class YetiController implements Initializable {
         personalPriorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
         personalDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         personalItemColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        personalTagColumn.setCellValueFactory(new PropertyValueFactory<>("tag"));
+        personalNotifyColumn.setCellValueFactory(new PropertyValueFactory<>("notify"));
 
         //load dummy data
         personalTableView.setItems(getPersonalEvents());
@@ -75,6 +82,8 @@ public class YetiController implements Initializable {
         professionalPriorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
         professionalDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         professionalItemColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        professionalTagColumn.setCellValueFactory(new PropertyValueFactory<>("tag"));
+        professionalNotifyColumn.setCellValueFactory(new PropertyValueFactory<>("notify"));
 
         //load dummy data
         professionalTableView.setItems(getProfessionalEvents());
@@ -104,12 +113,36 @@ public class YetiController implements Initializable {
         LocalEvent le = personalTableView.getSelectionModel().getSelectedItem();
         if (le == null) le = professionalTableView.getSelectionModel().getSelectedItem();
         if (le != null) {
-            DBUtils.deleteTask(le);
-            personalTableView.setItems(getPersonalEvents());
-            professionalTableView.setItems(getProfessionalEvents());
+            Alert deleteAlert = new Alert(Alert.AlertType.CONFIRMATION);
+            deleteAlert.setTitle("Deleting Item");
+            deleteAlert.setHeaderText("Are you sure you want to delete?");
+            Optional<ButtonType> option = deleteAlert.showAndWait();
+            if(option.get() == ButtonType.OK) {
+                System.out.println("Worked!");
+                DBUtils.deleteTask(le);
+                personalTableView.setItems(getPersonalEvents());
+                professionalTableView.setItems(getProfessionalEvents());
+            } else {
+                System.out.println("Deletion Cancelled");
+            }
+
         } else {
             System.out.println("Nothing Selected");
         }
+    }
+
+    /**
+     * Author: Amanda
+     * @param event
+     * @throws IOException
+     */
+    @FXML
+    private void account(MouseEvent event) throws IOException {
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/account.fxml"));
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
     private ObservableList<LocalEvent> getPersonalEvents() {
