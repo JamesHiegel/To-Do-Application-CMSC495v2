@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
@@ -9,32 +12,31 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560" prefWidth="830" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.SplashController">
     <children>
-        <Pane style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Pane style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
 
-                <Label fx:id="lblProgress" layoutX="100.0" layoutY="380.0"   textFill="314660" >
+                <Label fx:id="lblProgress" layoutX="100.0" layoutY="380.0" textFill="314660">
                     <font>
                         <Font name="Myriad Pro" size="15.0" />
                     </font>
                 </Label>
 
 
-                <ImageView fitHeight="900.0" fitWidth="840.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="567.0" fitWidth="850.0" layoutX="-10.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@/com/sad/resources/LOADING SCREEN V2.png" />
+                        <Image url="@../resources/LOADING%20SCREEN%20V2.png" />
                     </image>
                 </ImageView>
 
-                <ImageView fitHeight="300.0" fitWidth="238.0" layoutX="305.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="300.0" fitWidth="238.0" layoutX="295.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@/com/sad/resources/LOADING-ANIMATION-v2.gif" />
+                        <Image url="@../resources/LOADING-ANIMATION-v2.gif" />
                         <!-- Image url="@/com/sad/resources/loading.gif" / -->
                     </image>
                 </ImageView>
 
 
-                <ProgressBar fx:id="pbProgress" layoutX="110.0" layoutY="328.0" prefWidth="628.0"     progress="0.0" />
+                <ProgressBar fx:id="pbProgress" layoutX="99.0" layoutY="327.0" prefWidth="628.0" progress="0.0" />
             </children>
         </Pane>
     </children>
