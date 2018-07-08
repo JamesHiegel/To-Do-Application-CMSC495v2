@@ -103,7 +103,7 @@ public class YetiController implements Initializable {
     private void addItem(ActionEvent event) throws IOException {
         LocalEvent le = new LocalEvent();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/createTask.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource( "/com/sad/scenes/createTask.fxml" ));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -133,18 +133,20 @@ public class YetiController implements Initializable {
     }
 
     /**
-     * Author: Amanda
-     * @param event
-     * @throws IOException
+     * Author: Amanda updated 7/7/18
+     * add scene for settings page with logout option
+     *  settings.fxml
      */
     @FXML
-    private void account(MouseEvent event) throws IOException {
+    private void settings(MouseEvent event) throws IOException {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/account.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/settings.fxml"));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
+
+
 
     private ObservableList<LocalEvent> getPersonalEvents() {
         ObservableList<LocalEvent> localEvents = FXCollections.observableArrayList();
