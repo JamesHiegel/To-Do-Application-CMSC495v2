@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -9,39 +15,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
 <?import javafx.scene.effect.DropShadow?>
-<AnchorPane prefHeight="500.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.SignupController">
+
+<AnchorPane maxHeight="600.0" maxWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.SignupController">
     <children>
-        <Pane style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-
-            <ImageView fitHeight="530.0" fitWidth="1080.0" layoutX="-30" layoutY="0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@/com/sad/resources/YETI APP SIGN UP SCREEN V2.png" />
-                </image>
+        <Pane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <children>
+            <ImageView fitHeight="600.0" fitWidth="1000.0"   pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/FINAL%20SIGN%20UP%20SCREEN.png" />
+               </image>
             </ImageView>
-
-
-            <Label fx:id="signup_banner_snup" />
-
-
-            <PasswordField fx:id="pfield_snup" layoutX="266.0" layoutY="291.6" prefWidth="270" />
-            <TextField fx:id="uname_snup" layoutX="266.0" layoutY="245.7" prefWidth="270" />
-            <Label fx:id="uname_label_snup" >
+   
+   
+               <Label fx:id="signup_banner_snup" />
+   
+   
+               <PasswordField fx:id="pfield_snup" layoutX="361.0" layoutY="315.0" prefWidth="270" promptText="Create password" />
+               <TextField fx:id="uname_snup" depthTest="DISABLE" layoutX="360.0" layoutY="261.0" prefWidth="270" promptText="Enter your email" />
+               <Label fx:id="uname_label_snup">
             </Label>
-            <Label fx:id="pfield_label_snup" >
+               <Label fx:id="pfield_label_snup">
             </Label>
-            <Button fx:id="snup_button_snup" layoutX="245.0" layoutY="395.0" prefWidth="86" mnemonicParsing="false" onAction="#signUp_handleButtonAction" style="-fx-background-color: EDECEC;" text="Sign Up!" textFill="565658" >
+               <Button fx:id="snup_button_snup" layoutX="400.0" layoutY="372.0" mnemonicParsing="false" onAction="#signUp_handleButtonAction" prefWidth="86" style="-fx-background-color: EDECEC;" text="Sign Up!" textFill="565658">
+                   <effect>
+                       <DropShadow blurType="TWO_PASS_BOX" color="#979191" height="9.0" offsetX="3.0" offsetY="3.0" radius="4.0" width="9.0" />
+                   </effect>
+               </Button>
+   
+            <Button fx:id="snup_cancel_button_snup1" layoutX="502.0" layoutY="372.0" mnemonicParsing="false" onAction="#cancel_signUpHandleButtonAction" prefWidth="90" style="-fx-background-color: EDECEC;" text="Go Back" textFill="565658">
                 <effect>
-                    <DropShadow />
+                    <DropShadow color="#979191" height="9.0" offsetX="3.0" offsetY="3.0" radius="4.0" width="9.0" />
                 </effect>
             </Button>
-
-         <Button fx:id="snup_cancel_button_snup1" layoutX="346.4" layoutY="395.0" prefWidth="90" mnemonicParsing="false" onAction="#cancel_signUpHandleButtonAction" style="-fx-background-color: EDECEC;" text="Go Back" textFill="565658" >
-             <effect>
-                 <DropShadow />
-             </effect>
-         </Button>
+           </children>
         </Pane>
     </children>
 </AnchorPane>
