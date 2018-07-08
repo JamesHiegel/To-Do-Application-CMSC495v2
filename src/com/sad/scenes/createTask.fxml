@@ -13,6 +13,11 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.String?>
+
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane prefHeight="459.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.CreateTaskController">
 
 <AnchorPane prefHeight="459.0" prefWidth="600.0" style="-fx-background-color: #D7DEEA;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sad.controllers.CreateTaskController">
    <children>
@@ -23,6 +28,32 @@
       <Label layoutX="336.0" layoutY="30.0" text="Priority" />
       <RadioButton fx:id="sendEmail" layoutX="403.0" layoutY="88.0" mnemonicParsing="false" text="Send Email Notification" />
       <Label layoutX="339.0" layoutY="83.0" prefHeight="31.0" prefWidth="45.0" text="Email" />
+      <Button fx:id="btnAddEvent" layoutX="489.0" layoutY="405.0" mnemonicParsing="false" text="Add Event" onAction="#addEvent"/>
+      <Button fx:id="btnCancelEvent" layoutX="30.0" layoutY="405.0" mnemonicParsing="false" text="Cancel" onAction="#cancelEvent"/>
+      <ComboBox fx:id="priority" layoutX="403.0" layoutY="25.0" prefWidth="150.0" >
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="High" />
+                <String fx:value="Medium" />
+                <String fx:value="Low" />
+              </FXCollections>
+         </items>
+          <value>
+              <String fx:value="Medium" />
+          </value>
+       </ComboBox>
+      <ComboBox fx:id="tasktype" layoutX="94.0" layoutY="83.0" prefWidth="150.0" >
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Personal" />
+                  <String fx:value="Professional" />
+              </FXCollections>
+          </items>
+          <value>
+              <String fx:value="Personal" />
+          </value>
+      </ComboBox>
+
       <Button fx:id="btnAddEvent" layoutX="489.0" layoutY="405.0" mnemonicParsing="false" onAction="#addEvent" style="-fx-background-color: #5E8DB1;" text="Add Event" textFill="WHITE">
          <effect>
             <DropShadow color="#aea6a6" height="9.0" offsetX="3.0" offsetY="3.0" radius="4.0" width="9.0" />
