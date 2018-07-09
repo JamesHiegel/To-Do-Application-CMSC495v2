@@ -4,6 +4,7 @@
  */
 package com.sad.controllers;
 
+import com.sad.database.DBUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -50,23 +51,18 @@ public class AccountController implements Initializable {
         // closing database and setting stage back to login Screen
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = null;
+        System.out.println("Shutting down derby DB");
+        DBUtils.closeDB();
+
         try {
-            System.out.println("Shutting down derby DB");
-            DriverManager.getConnection(
-                    "jdbc:derby:YETI;shutdown=true");
+            root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/login.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        catch (SQLException e){
-                e.printStackTrace();
-            }
-           try{ root = FXMLLoader.load(getClass().getResource( "/com/sad/scenes/login.fxml" ));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-        }
-                    catch (IOException e) {
-                    e.printStackTrace(); }
-           }
 
-
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
 
     // setting stage back to YETI application
     public void cancelButtonHandleOnAction(javafx.event.ActionEvent event) {

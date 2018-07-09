@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,11 +24,12 @@
         </ImageView>
         <Label layoutX="14.0" layoutY="180.0" prefHeight="25.0" prefWidth="103.0" text="Change Password" />
         <Label layoutX="296.0" layoutY="180.0" prefHeight="25.0" prefWidth="110.0" text="Confirm Password:" />
-        <TextField layoutX="398.0" layoutY="180.0" prefHeight="25.0" prefWidth="151.0" />
-        <TextField layoutX="116.0" layoutY="180.0" prefHeight="25.0" prefWidth="172.0" />
+        <!-- <PasswordField fx:id="pfield_login" layoutX="361.0" layoutY="303.0" prefHeight="32.0" prefWidth="279.0" promptText="Password" /> -->
+        <PasswordField layoutX="398.0" layoutY="180.0" prefHeight="25.0" prefWidth="151.0" />
+        <PasswordField layoutX="116.0" layoutY="180.0" prefHeight="25.0" prefWidth="172.0" />
         <Button layoutX="226.0" layoutY="221.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="125.0" text="Save Changes" />
         <Label layoutX="300.0" layoutY="143.0" prefHeight="25.0" prefWidth="103.0" text="Current Password:" />
-        <TextField blendMode="SRC_ATOP" layoutX="398.0" layoutY="143.0" prefHeight="25.0" prefWidth="149.0" />
+        <PasswordField blendMode="SRC_ATOP" layoutX="398.0" layoutY="143.0" prefHeight="25.0" prefWidth="149.0" />
         <Label layoutX="197.0" layoutY="28.0" prefHeight="30.0" prefWidth="206.0" text="ACCOUNT SETTINGS">
             <font>
                 <Font size="20.0" />
