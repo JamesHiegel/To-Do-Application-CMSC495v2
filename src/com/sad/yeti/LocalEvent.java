@@ -75,9 +75,24 @@ public class LocalEvent {
 
     public String getTag() { return tag.get(); }
 
+    public String getPriorityText() {
+        switch (priority) {
+            case 1:
+                return "High";
+
+            case 2:
+                return "Medium";
+
+            case 3:
+                return "Low";
+
+        }
+        return "Unknown";
+    }
+
     @Override
     public String toString(){
-        return "On : " + this.getDate() + " " + this.getDescription();
+        return "On : " + this.getDate() + "\nDescription: " + this.getDescription() + " \nPriority: (" + this.getPriorityText() + ")";
     }
 
 }

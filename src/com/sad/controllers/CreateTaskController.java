@@ -80,6 +80,11 @@ public class CreateTaskController  implements Initializable {
         //add event to database
         DBUtils.addTask(le);
 
+        if (sendEmail.isSelected()) {
+            EmailController.sendEmailNotification(le);
+
+        }
+
         // setting stage back to normal YETI application
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Parent root = null;
