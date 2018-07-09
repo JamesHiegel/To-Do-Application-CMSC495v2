@@ -340,6 +340,33 @@ public class DBUtils {
         }
     }
 
+    public static String getUsername(int userID) {
+        String username="";
+        Connection conn = null;
+        PreparedStatement pstmt;
+        ResultSet rs;
+        try {
+            conn = DriverManager.getConnection(DB_URL);
+            pstmt = conn.prepareStatement("SELECT us_userName FROM Users where us_id = ?");
+            pstmt.setInt(1, userID);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                username  = rs.getString(1);
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+        return username;
+    }
+
     public String getDbError() {
         return dbError;
     }
