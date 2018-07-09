@@ -41,8 +41,8 @@ public class MFAController implements Initializable {
 
 
             if (get_otp.equals( EmailController.getSEND() )) {
-                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 try {
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     root = null;
                     root = FXMLLoader.load( getClass().getResource( "/com/sad/scenes/yeti.fxml" ) );
                 } catch (java.io.IOException e) {
@@ -51,7 +51,7 @@ public class MFAController implements Initializable {
                 }
 
             } else {
-                JOptionPane.showMessageDialog( null, "Please enter a valid PIN!","Alert!",JOptionPane.ERROR_MESSAGE,null);
+                JOptionPane.showMessageDialog( null, "Invalid Pin!\nPlease enter a valid PIN!");
                 hitcount++;
             }
             Scene scene = new Scene( root );
