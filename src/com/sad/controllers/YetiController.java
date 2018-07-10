@@ -20,6 +20,8 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -44,6 +46,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class YetiController implements Initializable {
 
+    @FXML private TextField filterField;
     @FXML private Label lblPersonalList;
     @FXML private Label lblProfessionalList;
     @FXML private Label lblCopyright;
@@ -75,8 +78,30 @@ public class YetiController implements Initializable {
         personalTagColumn.setCellValueFactory(new PropertyValueFactory<>("tag"));
         personalNotifyColumn.setCellValueFactory(new PropertyValueFactory<>("notify"));
 
-        //load dummy data
-        personalTableView.setItems(getPersonalEvents());
+        ObservableList<LocalEvent> personalEvents = getPersonalEvents();
+        //personalTableView.setItems(personalEvents);
+
+        FilteredList<LocalEvent>  filteredPersonalEvents = new FilteredList<>(personalEvents, p -> true);
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredPersonalEvents.setPredicate(LocalEvent -> {
+                // If filter text is empty, display all Events
+                if (newValue==null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare Tag of every LocalEvent with filter text
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (LocalEvent.getTag().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                return false;
+            });
+        });
+
+        SortedList<LocalEvent> sortedPersonalData = new SortedList<>(filteredPersonalEvents);
+        sortedPersonalData.comparatorProperty().bind(personalTableView.comparatorProperty());
+        personalTableView.setItems(sortedPersonalData);
 
         //setup the columns in the table
         professionalPriorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
@@ -85,8 +110,30 @@ public class YetiController implements Initializable {
         professionalTagColumn.setCellValueFactory(new PropertyValueFactory<>("tag"));
         professionalNotifyColumn.setCellValueFactory(new PropertyValueFactory<>("notify"));
 
-        //load dummy data
-        professionalTableView.setItems(getProfessionalEvents());
+        ObservableList<LocalEvent> professionalEvents = getProfessionalEvents();
+        //professionalTableView.setItems(professionalEvents);
+
+        FilteredList<LocalEvent>  filteredProfessionalEvents = new FilteredList<>(professionalEvents, p -> true);
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredProfessionalEvents.setPredicate(LocalEvent -> {
+                // If filter text is empty, display all Events
+                if (newValue==null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare Tag of every LocalEvent with filter text
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (LocalEvent.getTag().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                return false;
+            });
+        });
+
+        SortedList<LocalEvent> sortedProfessionalData = new SortedList<>(filteredProfessionalEvents);
+        sortedProfessionalData.comparatorProperty().bind(professionalTableView.comparatorProperty());
+        professionalTableView.setItems(sortedProfessionalData);
 
         //datePicker.setValue( LocalDate.now() );
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> { 
