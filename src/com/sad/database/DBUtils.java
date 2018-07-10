@@ -283,6 +283,33 @@ public class DBUtils {
         }
     }
 
+    public static void updateTask(LocalEvent le) {
+        Connection conn = null;
+        PreparedStatement pstmt;
+        try {
+            conn = DriverManager.getConnection(DB_URL);
+            pstmt = conn.prepareStatement("update Task set ts_type = ?, ts_priority = ?, ts_date = ?, ts_description = ?, ts_custom_tag = ?, ts_notify = ? where ts_id = ?");
+            pstmt.setInt(   1,    (le.getPersonal()?1:2)); //ts_type - 1=Personal, 2=Professional
+            pstmt.setInt(   2,    (le.getPriority())); //ts_priority - 1=High, 2=Medium, 3=Low
+            pstmt.setDate(  3,    java.sql.Date.valueOf(le.getDate())); //ts_date
+            pstmt.setString(4,    le.getDescription()); //ts_description
+            pstmt.setString(5, le.getTag()); //ts_custom_tag
+            pstmt.setString(6, le.getNotify()); //ts_notify
+            pstmt.setInt(   7, le.getRecordID()); //ts_id
+            pstmt.execute();
+        } catch (SQLException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+    }
+
     /*
         JT - 06/28:
         Renamed getPersonalTasks to getTasks since it handles both.
