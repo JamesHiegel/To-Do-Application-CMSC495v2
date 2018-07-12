@@ -67,7 +67,7 @@ public class EmailController {
     public static void sendEmailNotification(LocalEvent le) {
         final String username = "Yetitoseeyou@outlook.com";
         final String password = "Yetimail@java";
-        String notifName = DBUtils.getUsername( YETI.getUserID() );
+        final String notifName = DBUtils.getUsername( YETI.getUserID() );
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
