@@ -4,11 +4,9 @@ import com.sad.yeti.LocalEvent;
 import com.sad.yeti.YETI;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.io.File;
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.Month;
 
 public class DBUtils {
     private static final String DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
