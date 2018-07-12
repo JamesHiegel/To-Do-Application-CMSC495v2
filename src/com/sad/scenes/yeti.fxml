@@ -62,7 +62,7 @@
                <children>
                   <Button fx:id="btnAddItem" mnemonicParsing="false" onAction="#addItem" prefHeight="20.0" prefWidth="130.0" style="-fx-background-color: navy;" text="Add Item" textFill="white" />
                   <Button fx:id="btnDeleteItem" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: navy;" text="Delete Item" textFill="white" />
-                  <Button fx:id="btnUpdateItem" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: navy;" text="Update Item" textFill="white" />
+                  <Button fx:id="btnEditItem" mnemonicParsing="false" onAction="#editItem" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: navy;" text="Edit Item" textFill="white" />
                   <TextField fx:id="filterField" promptText="Tag Filter" />
                </children>
             </HBox>

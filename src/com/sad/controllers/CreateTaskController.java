@@ -25,8 +25,6 @@ public class CreateTaskController  implements Initializable {
     @FXML private DatePicker date;
     @FXML private TextField tag;
     @FXML private RadioButton sendEmail;
-    @FXML private Button btnAddEvent;
-    @FXML private Button btnCancelEvent;
     @FXML private TextArea descr;
     @FXML private ComboBox priority;
     @FXML private ComboBox tasktype;
