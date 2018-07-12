@@ -33,7 +33,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import com.sad.yeti.LocalEvent;
 import java.time.Month;
@@ -163,6 +165,9 @@ public class YetiController implements Initializable {
             Alert deleteAlert = new Alert(Alert.AlertType.CONFIRMATION);
             deleteAlert.setTitle("Deleting Item");
             deleteAlert.setHeaderText("Are you sure you want to delete?");
+            deleteAlert.initModality(Modality.APPLICATION_MODAL);
+            deleteAlert.getDialogPane().setStyle("-fx-border-color: navy");
+            deleteAlert.initStyle(StageStyle.UNDECORATED);
             Optional<ButtonType> option = deleteAlert.showAndWait();
             if(option.get() == ButtonType.OK) {
                 System.out.println("Worked!");
