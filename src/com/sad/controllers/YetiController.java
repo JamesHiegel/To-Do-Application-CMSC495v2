@@ -23,7 +23,6 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,13 +30,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import com.sad.yeti.LocalEvent;
-import java.time.Month;
-
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -47,13 +45,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class YetiController implements Initializable {
 
     @FXML private TextField filterField;
-    @FXML private Label lblPersonalList;
-    @FXML private Label lblProfessionalList;
-    @FXML private Label lblCopyright;
-    @FXML private Button btnAddItem;
-    @FXML private Button btnDeleteItem;
-    @FXML private Label lblDate;
-    @FXML private ImageView account_icon;
+       @FXML private Label lblDate;
     @FXML private TableView<LocalEvent> personalTableView;
     @FXML private TableColumn<LocalEvent, Integer> personalPriorityColumn;
     @FXML private TableColumn<LocalEvent, LocalDate> personalDateColumn;
@@ -67,6 +59,8 @@ public class YetiController implements Initializable {
     @FXML private TableColumn<LocalEvent, String> professionalItemColumn;
     @FXML private TableColumn<LocalEvent, String> professionalTagColumn;
     @FXML private TableColumn<LocalEvent, String> professionalNotifyColumn;
+
+    public static LocalEvent publicLocalEvent;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -163,6 +157,9 @@ public class YetiController implements Initializable {
             Alert deleteAlert = new Alert(Alert.AlertType.CONFIRMATION);
             deleteAlert.setTitle("Deleting Item");
             deleteAlert.setHeaderText("Are you sure you want to delete?");
+            deleteAlert.initModality(Modality.APPLICATION_MODAL);
+            deleteAlert.getDialogPane().setStyle("-fx-border-color: navy");
+            deleteAlert.initStyle(StageStyle.UNDECORATED);
             Optional<ButtonType> option = deleteAlert.showAndWait();
             if(option.get() == ButtonType.OK) {
                 System.out.println("Worked!");
@@ -175,6 +172,18 @@ public class YetiController implements Initializable {
 
         } else {
             System.out.println("Nothing Selected");
+        }
+    }
+
+    @FXML
+    private void editItem(ActionEvent event) throws IOException {
+        publicLocalEvent = personalTableView.getSelectionModel().getSelectedItem();
+        if (publicLocalEvent == null) publicLocalEvent = professionalTableView.getSelectionModel().getSelectedItem();
+        if (publicLocalEvent != null) {
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/com/sad/scenes/editTask.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
         }
     }
 

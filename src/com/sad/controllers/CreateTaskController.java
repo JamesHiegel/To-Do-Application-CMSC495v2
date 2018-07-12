@@ -10,11 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import org.apache.derby.impl.sql.execute.CurrentDatetime;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -25,8 +21,6 @@ public class CreateTaskController  implements Initializable {
     @FXML private DatePicker date;
     @FXML private TextField tag;
     @FXML private RadioButton sendEmail;
-    @FXML private Button btnAddEvent;
-    @FXML private Button btnCancelEvent;
     @FXML private TextArea descr;
     @FXML private ComboBox priority;
     @FXML private ComboBox tasktype;
