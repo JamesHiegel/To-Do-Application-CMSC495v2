@@ -12,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -23,12 +22,9 @@ public class MFAController implements Initializable {
 
     }
 
-    @FXML
-    Button proceed_button_mfa;
-    @FXML
-    TextField otp_tfield_mfa;
-    @FXML
-    Label pin_banner_mfa;
+    @FXML Button proceed_button_mfa;
+    @FXML TextField otp_tfield_mfa;
+    @FXML Label pin_msg_mfa;
 
     @FXML
     private void MFA_ProceedOnButtonAction(ActionEvent event) {
@@ -45,17 +41,17 @@ public class MFAController implements Initializable {
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     root = null;
                     root = FXMLLoader.load( getClass().getResource( "/com/sad/scenes/yeti.fxml" ) );
+                    Scene scene = new Scene( root );
+                    stage.setScene( scene );
                 } catch (java.io.IOException e) {
                     e.printStackTrace();
 
                 }
 
             } else {
-                JOptionPane.showMessageDialog( null, "Invalid Pin!\nPlease enter a valid PIN!");
+                pin_msg_mfa.setText("Invalid PIN, please try again!");
                 hitcount++;
             }
-            Scene scene = new Scene( root );
-            stage.setScene( scene );
         }
     }
 
