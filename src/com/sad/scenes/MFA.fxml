@@ -25,11 +25,7 @@
          </image>
       </ImageView>
 
-      <Label fx:id="pin_banner_mfa" layoutX="218.0" layoutY="88.0">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Label>
+      <Label fx:id="pin_msg_mfa" alignment="CENTER" layoutX="299.0" layoutY="445.0" prefHeight="28.0" prefWidth="393.0" textFill="#ff0101" />
 
 
       <TextField fx:id="otp_tfield_mfa" layoutX="395.0" layoutY="269.0" prefWidth="193" />

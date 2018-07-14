@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="YETI:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/To_Do_Application_CMSC495_jar</output-path>
+    <root id="archive" name="YETI.jar">
+      <element id="module-output" name="To-Do-Application-CMSC495" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/lib/derby.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/lib/javax.mail-1.4.5.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Java EE 6-Java EE 6" />
+      <element id="library" level="project" name="aws-java-sdk-1.11.357" />
+    </root>
+  </artifact>
+</component>
